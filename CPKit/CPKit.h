@@ -11,10 +11,10 @@
 
 #import <SDAutoLayout/SDAutoLayout.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import "Category.h"
-#import "Config.h"
-#import "Base.h"
-#import "Views.h"
+#import "Config/Category.h"
+#import "Config/Config.h"
+#import "Config/Base.h"
+#import "Config/Views.h"
 
 
 #endif /* CPKit_h */
