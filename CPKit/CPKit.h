@@ -16,7 +16,7 @@
 #import <MJExtension/MJExtension.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import <CPNavgationController/CPNavgationController.h>
+#import <CPNavgationController/CPNavigationController.h>
 #import "CPKitManager.h"
 
 
