@@ -77,7 +77,7 @@
         {
             if (self.number != 0)
             {
-                NSString *numberStr = [NSString stringWithFormat:@"%ld",self.number];
+                NSString *numberStr = [NSString stringWithFormat:@"%ld",(long)self.number];
                 if (self.number > 99)
                 {
                     numberStr = @"99+";
