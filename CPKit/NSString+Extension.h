@@ -15,24 +15,4 @@
  */
 - (NSString *)md5;
 
-/**
- 秒转时间
- */
-+ (NSString *)timeForRemaining:(NSInteger)sec;
-
-/**
- 移除省字
- */
-- (NSString *)removeProvinceChar;
-
-/**
- //传入 秒  得到 DD:HH:MM:SS
- */
-- (NSString *)getDDHHMMSSFromSS;
-
-/**
- //传入 秒  得到 HH:MM:SS
- */
-- (NSString *)getHHMMSSFromSS;
-
 @end
