@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <AFNetworking.h>
+#import <AFNetworking/AFNetworking.h>
 #import "CPDataModel.h"
 
 typedef void(^CPNetRequestSuccess)(NSDictionary *  _Nullable responseObject , NSURLSessionDataTask * _Nonnull task);
@@ -22,36 +22,36 @@ typedef void(^CPNetRequestDownCompletionHandler)(NSURLResponse * _Nonnull respon
 +(CPNetRequest *_Nullable)getManager;
 
 - (NSURLSessionDataTask  * _Nonnull)CPPOST:(NSString * _Nonnull)urlStr
-                      parameters:(NSDictionary * _Null_unspecified)dictionary
-                         success:(CPNetRequestSuccess _Nonnull)success
-                         failure:(CPNetRequestFailure _Null_unspecified)failure;
+                                parameters:(NSDictionary * _Null_unspecified)dictionary
+                                   success:(CPNetRequestSuccess _Nonnull)success
+                                   failure:(CPNetRequestFailure _Null_unspecified)failure;
 
 - (NSURLSessionDataTask * _Nonnull)CPGET:(NSString * _Nonnull)urlStr
-                     parameters:(NSDictionary * _Null_unspecified)dictionary
-                        success:(CPNetRequestSuccess _Nonnull)success
-                        failure:(CPNetRequestFailure _Null_unspecified)failure;
+                              parameters:(NSDictionary * _Null_unspecified)dictionary
+                                 success:(CPNetRequestSuccess _Nonnull)success
+                                 failure:(CPNetRequestFailure _Null_unspecified)failure;
 
 - (NSURLSessionDataTask * _Nonnull)CPPUT:(NSString * _Nonnull)urlStr
-                     parameters:(NSDictionary * _Null_unspecified)dictionary
-                        success:(CPNetRequestSuccess _Nonnull)success
-                        failure:(CPNetRequestFailure _Null_unspecified)failure;
+                              parameters:(NSDictionary * _Null_unspecified)dictionary
+                                 success:(CPNetRequestSuccess _Nonnull)success
+                                 failure:(CPNetRequestFailure _Null_unspecified)failure;
 
 - (NSURLSessionDataTask * _Nonnull)CPPATCH:(NSString * _Null_unspecified)urlStr
-                       parameters:(NSDictionary * _Null_unspecified)dictionary
-                          success:(CPNetRequestSuccess _Null_unspecified)success
-                          failure:(CPNetRequestFailure _Null_unspecified)failure;
+                                parameters:(NSDictionary * _Null_unspecified)dictionary
+                                   success:(CPNetRequestSuccess _Null_unspecified)success
+                                   failure:(CPNetRequestFailure _Null_unspecified)failure;
 
 - (NSURLSessionDataTask * _Nonnull)CPDEL:(NSString * _Nonnull)urlStr
-                     parameters:(NSDictionary * _Null_unspecified)dictionary
-                        success:(CPNetRequestSuccess _Nonnull)success
-                        failure:(CPNetRequestFailure _Null_unspecified)failure;
+                              parameters:(NSDictionary * _Null_unspecified)dictionary
+                                 success:(CPNetRequestSuccess _Nonnull)success
+                                 failure:(CPNetRequestFailure _Null_unspecified)failure;
 
 - (NSURLSessionDataTask * _Nonnull)CPPOST:(NSString * _Nonnull)urlStr
-                      parameters:(NSDictionary * _Null_unspecified)dictionary
-                      dataModels:(NSArray<CPDataModel *> * _Nonnull)dataModels
-                        progress:(CPNetRequestDownProgress _Null_unspecified)progress
-                         success:(CPNetRequestSuccess _Nonnull)success
-                         failure:(CPNetRequestFailure _Null_unspecified)failure;
+                               parameters:(NSDictionary * _Null_unspecified)dictionary
+                               dataModels:(NSArray<CPDataModel *> * _Nonnull)dataModels
+                                 progress:(CPNetRequestDownProgress _Null_unspecified)progress
+                                  success:(CPNetRequestSuccess _Nonnull)success
+                                  failure:(CPNetRequestFailure _Null_unspecified)failure;
 
 - (NSURLSessionDownloadTask * _Nonnull)CPdownloadUrl:(NSString *_Nonnull)urlStr
                                             progress:(CPNetRequestDownProgress _Null_unspecified)progress
@@ -61,12 +61,12 @@ typedef void(^CPNetRequestDownCompletionHandler)(NSURLResponse * _Nonnull respon
 - (void)addRequestSerializerHead:(NSString * _Null_unspecified)urlStr;
 
 - (void)responseObject:(id  _Nullable)responseObject
-                 task:(NSURLSessionDataTask * _Nonnull)task
-              success:(CPNetRequestSuccess _Nullable )success
-              failure:(CPNetRequestFailure _Nullable )failure;
+                  task:(NSURLSessionDataTask * _Nonnull)task
+               success:(CPNetRequestSuccess _Nullable )success
+               failure:(CPNetRequestFailure _Nullable )failure;
 
 - (void)failObject:(NSError * _Nullable)error
-             task:(NSURLSessionDataTask * _Nonnull)task
-          failure:(CPNetRequestFailure _Nonnull )failure;
+              task:(NSURLSessionDataTask * _Nonnull)task
+           failure:(CPNetRequestFailure _Nonnull )failure;
 @end
 
