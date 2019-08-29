@@ -320,7 +320,7 @@ static AFURLSessionManager *cpURLSessionManager;
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     CPLog(@"网络异常  -----  code:%ld",error.code);
-    if (failure) failure(@"网络异常",[NSString stringWithFormat:@"%ld",error.code],task);
+    if (failure) failure(@"网络异常",[NSString stringWithFormat:@"%ld",(long)error.code],task);
 }
 
 
