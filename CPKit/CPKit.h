@@ -41,6 +41,8 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "UIViewController+CP_Extension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "NSMutableAttributedString+Extension.h"
+#import "UIImage+Extension.h"
+#import "UITextField+Extension.h"
 
 //引用
 #define kWeakObject(x)          @weakify(x);
