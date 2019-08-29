@@ -1,39 +1,56 @@
 //
-//  NSObject+Extension.m
+//  BaseObject.m
 //  MeetCarefree
 //
 //  Created by 陈平 on 2017/11/8.
 //  Copyright © 2017年 xxf. All rights reserved.
 //
 
+#import "BaseObject.h"
 #import "NSObject+Extension.h"
-#import <objc/message.h>
 
-@implementation NSObject (Extension)
+#define SuppressPerformSelectorLeakWarning(Stuff) \
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+Stuff; \
+_Pragma("clang diagnostic pop") \
+} while (0)
 
-// 返回self的所有对象名称
-+ (NSArray<NSString *> *)propertyOfSelf{
-    unsigned int count;
+@implementation BaseObject
+
+// 归档
+- (void)encodeWithCoder:(NSCoder *)enCoder{
+    // 取得所有成员变量名
+    NSArray *properNames = [[self class] propertyOfSelf];
     
-    // 1. 获得类中的所有成员变量
-    Ivar *ivarList = class_copyIvarList(self, &count);
-    
-    NSMutableArray<NSString *> *properNames =[NSMutableArray array];
-    for (int i = 0; i < count; i++)
-        {
-        Ivar ivar = ivarList[i];
+    for (NSString *propertyName in properNames)
+    {
+        // 创建指向get方法
+        SEL getSel = NSSelectorFromString(propertyName);
+        // 对每一个属性实现归档
+        SuppressPerformSelectorLeakWarning([enCoder encodeObject:[self performSelector:getSel] forKey:propertyName]);
         
-        // 2.获得成员属性名
-        NSString *name = [NSString stringWithUTF8String:ivar_getName(ivar)];
-        
-        // 3.除去下划线，从第一个角标开始截取
-        NSString *key = [name substringFromIndex:1];
-        
-        [properNames addObject:key];
     }
-    
-    return [properNames copy];
 }
 
+// 解档
+- (id)initWithCoder:(NSCoder *)aDecoder{
+    // 取得所有成员变量名
+    NSArray *properNames = [[self class] propertyOfSelf];
+    
+    for (NSString *propertyName in properNames)
+    {
+        // 创建指向属性的set方法
+        // 1.获取属性名的第一个字符，变为大写字母
+        NSString *firstCharater = [propertyName substringToIndex:1].uppercaseString;
+        // 2.替换掉属性名的第一个字符为大写字符，并拼接出set方法的方法名
+        NSString *setPropertyName = [NSString stringWithFormat:@"set%@%@:",firstCharater,[propertyName substringFromIndex:1]];
+        SEL setSel = NSSelectorFromString(setPropertyName);
+        SuppressPerformSelectorLeakWarning([self performSelector:setSel withObject:[aDecoder decodeObjectForKey:propertyName]]);
+        
+    }
+    return  self;
+}
 
 @end
