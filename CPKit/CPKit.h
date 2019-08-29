@@ -9,9 +9,6 @@
 #ifndef CPKit_h
 #define CPKit_h
 
-
-
-
 //输出
 #if DEBUG
 
@@ -21,7 +18,15 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #define CPLog(...)
 #endif
 
+//版本
+#define CPiOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
+#define CPiOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
+#define CPiOS10Later ([UIDevice currentDevice].systemVersion.floatValue >= 10.0f)
+#define CPiOS11Later ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
+
+
 #import <AFNetworking/AFNetworking.h>
+#import <SDAutoLayout/SDAutoLayout.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
@@ -31,7 +36,11 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
 #import "CPNetManager.h"
-
+#import "BaseViewController.h"
+#import "UIView+CPFrame.h"
+#import "UIViewController+CP_Extension.h"
+#import "UIBarButtonItem+Extension.h"
+#import "NSMutableAttributedString+Extension.h"
 
 //引用
 #define kWeakObject(x)          @weakify(x);
