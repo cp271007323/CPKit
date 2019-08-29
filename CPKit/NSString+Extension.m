@@ -34,15 +34,15 @@
     return self;
 }
 
-+(NSString *)timeForRemaining:(NSInteger)sec{
++(NSString *)timeForRemaining:(long)sec{
     NSMutableString *timeStr = [NSMutableString string];
     NSInteger hour = sec / 3600;
     if (hour > 0)
     {
         [timeStr appendFormat:@"%@", [NSString stringWithFormat:@"%02ld:",hour]];
     }
-    NSInteger minutes = (NSInteger)(sec - hour * 3600) / 60;
-    NSInteger secound = (NSInteger)(sec - hour * 3600 - minutes * 60);
+    NSInteger minutes = (long)(sec - hour * 3600) / 60;
+    NSInteger secound = (long)(sec - hour * 3600 - minutes * 60);
     [timeStr appendFormat:@"%@", [NSString stringWithFormat:@"%02ld:%02ld",minutes,secound]];
     return timeStr;
 }
@@ -51,13 +51,13 @@
 {
     NSInteger seconds = [self integerValue];
     
-    NSString *str_day = [NSString stringWithFormat:@"%02ld",(NSInteger)(seconds / 86400)];
+    NSString *str_day = [NSString stringWithFormat:@"%02ld",(long)(seconds / 86400)];
     //format of hour
-    NSString *str_hour = [NSString stringWithFormat:@"%02ld",(NSInteger)(seconds % 86400 / 360)];
+    NSString *str_hour = [NSString stringWithFormat:@"%02ld",(long)(seconds % 86400 / 360)];
     //format of minute
-    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(NSInteger)((seconds % 86400 % 3600) / 60)];
+    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(long)((seconds % 86400 % 3600) / 60)];
     //format of second
-    NSString *str_second = [NSString stringWithFormat:@"%02ld",(NSInteger)(seconds % 60)];
+    NSString *str_second = [NSString stringWithFormat:@"%02ld",(long)(seconds % 60)];
     //format of time
     NSString *format_time = [NSString stringWithFormat:@"%@:%@:%@:%@",str_day,str_hour,str_minute,str_second];
     
@@ -69,11 +69,11 @@
 {
     NSInteger seconds = [self integerValue];
     
-    NSString *str_hour = [NSString stringWithFormat:@"%02ld",(NSInteger)(seconds % 86400 / 3600)];
+    NSString *str_hour = [NSString stringWithFormat:@"%02ld",(long)(seconds % 86400 / 3600)];
     //format of minute
-    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(NSInteger)((seconds % 86400 % 3600) / 60)];
+    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(long)((seconds % 86400 % 3600) / 60)];
     //format of second
-    NSString *str_second = [NSString stringWithFormat:@"%02ld",(NSInteger)(seconds % 60)];
+    NSString *str_second = [NSString stringWithFormat:@"%02ld",(long)(seconds % 60)];
     //format of time
     NSString *format_time = [NSString stringWithFormat:@"%@:%@:%@",str_hour,str_minute,str_second];
     
