@@ -19,7 +19,6 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #endif
 
 #import <AFNetworking/AFNetworking.h>
-#import <SDAutoLayout/SDAutoLayout.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
