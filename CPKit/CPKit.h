@@ -9,16 +9,15 @@
 #ifndef CPKit_h
 #define CPKit_h
 
-#import <AFNetworking.h>
-#import <SDAutoLayout.h>
-#import <SDWebImage.h>
-#import <MJRefresh.h>
-#import <MJExtension.h>
-#import <ReactiveObjC.h>
-#import <IQKeyboardManager.h>
-#import <CPNavgationController.h>
+#import <AFNetworking/AFNetworking.h>
+#import <SDAutoLayout/SDAutoLayout.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <CPNavgationController/CPNavgationController.h>
 #import "CPKitManager.h"
-
 
 
 #endif /* CPKit_h */
