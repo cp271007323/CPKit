@@ -18,13 +18,5 @@
     
 }
 
-+ (NSMutableAttributedString *)createAttributedImage:(UIImage *)image bounds:(CGRect)rect
-{
-    NSTextAttachment *attch = [NSTextAttachment new];
-    attch.image = image;
-    attch.bounds = rect;
-    return [NSMutableAttributedString attributedStringWithAttachment:attch];
-}
-
 @end
 

@@ -9,12 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef enum : NSUInteger {
-    CPAttributedImageLocation_left,
-    CPAttributedImageLocation_right,
-} CPAttributedImageLocation;
-
-
 @interface NSMutableAttributedString (Extension)
 
 /**
@@ -23,10 +17,5 @@ typedef enum : NSUInteger {
 +(NSMutableAttributedString *)attributedWithString:(NSString *)str
                                              color:(UIColor *)color
                                               font:(UIFont *)font;
-
-/**
- 图片富文本
- */
-+ (NSMutableAttributedString *)createAttributedImage:(UIImage *)image bounds:(CGRect)rect;
 
 @end
