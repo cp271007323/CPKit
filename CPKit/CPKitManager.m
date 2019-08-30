@@ -7,7 +7,8 @@
 //
 
 #import "CPKitManager.h"
-
+#import "CPUserDefaultTool.h"
+#import "CPKit.h"
 
 @interface CPKitManager ()
 
@@ -48,12 +49,43 @@ static CPKitManager *instance = nil;
     self = [super init];
     if (self) {
         
+        NSDictionary *dic = [CPUserDefaultTool getUserInfo];
+        if (dic)
+        {
+            CPLog(@">>>>>>>>>>>>>>>>>>>>>:用户数据存在")
+            self.userModel = [NSClassFromString(dic[@"Class"]) mj_objectWithKeyValues:dic];
+        }
+        else
+        {
+            CPLog(@">>>>>>>>>>>>>>>>>>>>>:用户数据不存在")
+        }
+        
+        kWeakObject(self)
+        [RACObserve(self, userModel) subscribeNext:^(id  _Nullable x){
+            kStrongObject(self)
+            //存在用户
+            if (x)
+            {
+                [CPUserDefaultTool setUserInfo:[self.userModel mj_keyValues]];
+            }
+            //不存在
+            else
+            {
+                //移除用户数据
+                [CPUserDefaultTool removeUserInfo];
+            }
+        }];
+        
     }
     return self;
 }
 
 
 #pragma mark - Get
+- (BOOL)isLogin
+{
+    return self.userModel ? YES : NO;
+}
 
 - (CGFloat)systemNavgationBarHeight
 {

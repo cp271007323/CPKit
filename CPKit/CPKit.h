@@ -49,6 +49,10 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "CPFootRefresh.h"
 #import "CPHeadGifRefresh.h"
 #import "CPShareController.h"
+#import "CPUserDefaultTool.h"
+
+
+
 
 //引用
 #define kWeakObject(x)          @weakify(x);
