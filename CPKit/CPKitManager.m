@@ -55,24 +55,31 @@ static CPKitManager *instance = nil;
 
 #pragma mark - Get
 
-- (CGFloat) navHeight
+- (CGFloat)systemNavgationBarHeight
 {
-    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    
-    return  (int)statusBarHeight == 44 ? 88 : 64;
+    if (![UIApplication sharedApplication].isStatusBarHidden)
+    {
+        return (int)self.systemStatusBarHeight == 44 ? 88 : 64;
+    }
+    else
+    {
+        return (int)self.systemStatusBarHeight == 44 ? 88 - self.systemStatusBarHeight : 64 - self.systemStatusBarHeight;
+    }
 }
 
-- (CGFloat)statusBarHeight
+- (CGFloat)systemStatusBarHeight
 {
     return [UIApplication sharedApplication].statusBarFrame.size.height;
 }
 
-- (CGFloat)tabBarHeight
+- (CGFloat)systemTabBarHeight
 {
-    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
-    
-    return  (int)statusBarHeight == 44 ? 88 : 49;
+    return  (int)self.systemStatusBarHeight == 44 ? 88 : 49;
 }
 
+- (UIWindow *)systemWindow
+{
+    return [UIApplication sharedApplication].delegate.window;
+}
 
 @end

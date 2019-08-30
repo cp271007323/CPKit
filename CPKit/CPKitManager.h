@@ -17,20 +17,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 /**
- 导航栏高度
+ 系统导航栏高度
  */
-@property (nonatomic , assign , readonly) CGFloat navHeight;
+@property (nonatomic , assign , readonly) CGFloat systemNavgationBarHeight;
 
 /**
  状态栏高度
  */
-@property (nonatomic , assign , readonly) CGFloat statusBarHeight;
+@property (nonatomic , assign , readonly) CGFloat systemStatusBarHeight;
 
 /**
  标签栏高度
  */
-@property (nonatomic , assign ) CGFloat tabBarHeight;
+@property (nonatomic , assign , readonly) CGFloat systemTabBarHeight;
 
+/**
+ 当前根窗口
+ */
+@property (nonatomic , strong , readonly) UIWindow *systemWindow;
 
 @end
 

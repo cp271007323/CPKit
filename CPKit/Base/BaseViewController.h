@@ -20,6 +20,11 @@ UICollectionViewDataSource,
 UICollectionViewDelegateFlowLayout>
 
 /**
+ 导航栏自定义视图
+ */
+@property (nonatomic , strong) UIView *navBarView;
+
+/**
  当前控制器
  */
 @property (nonatomic , assign) BOOL isCurrentVC;
@@ -42,8 +47,13 @@ UICollectionViewDelegateFlowLayout>
 /**
  显示导航栏图片
  */
-- (void)showNavigationBarImage:(BOOL)show;
- 
+- (void)showNavigationBarImage:(BOOL)show image:(UIImage *)image;
+
+/**
+ 更新自定义导航视图的高度 同时可以做布局操作
+ */
+- (void)updateNavBarViewForHeight:(CGFloat)height layout:(void (^)(UIView *navBarView))layoutBlock;
+
 
 @end
 

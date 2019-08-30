@@ -12,7 +12,10 @@
 #import "CPKit.h"
 
 @interface BaseViewController ()
-@property (nonatomic , strong) UIView *navBarView;
+
+/**
+ 导航底部线
+ */
 @property (nonatomic , strong) UIView *navBottomLine;
 
 @end
@@ -54,18 +57,14 @@
     [view.superview addSubview:self.navBarView];
     [view.superview insertSubview:self.navBarView belowSubview:view];
     self.navBarView.sd_layout
-    .bottomEqualToView(view)
+    .topEqualToView(view.superview)
     .leftEqualToView(view)
     .rightEqualToView(view)
-    .heightIs([CPKitManager shareManager].navHeight);
-    
+    .heightIs([CPKitManager shareManager].systemNavgationBarHeight);
     
     [self hiddenNavgationBarBottomLine:NO alphaNavgationBar:NO];
-    [self showNavigationBarImage:NO];
-    
+    [self showNavigationBarImage:NO image:[UIImage new]];
 }
-
-
 
 #pragma mark - Public
 - (void)setViewControllerTitle:(NSString *)title color:(UIColor *)color
@@ -80,9 +79,17 @@
     self.navBarView.hidden = isAlpha;
 }
 
-- (void)showNavigationBarImage:(BOOL)show
+- (void)showNavigationBarImage:(BOOL)show image:(UIImage *)image
 {
     [self.navBarView viewWithTag:1].hidden = !show;
+    ((UIImageView *)[self.navBarView viewWithTag:1]).image = image;
+}
+
+- (void)updateNavBarViewForHeight:(CGFloat)height layout:(void (^)(UIView *navBarView))layoutBlock
+{
+    self.navBarView.sd_layout
+    .heightIs(height);
+    if (layoutBlock) layoutBlock(self.navBarView);
 }
 
 #pragma mark - UITableViewDataSource
@@ -132,7 +139,8 @@
 #endif
 
 #pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
     return 0;
 }
 
@@ -169,7 +177,7 @@
 - (UIView *)navBarView{
     if (_navBarView == nil)
     {
-        _navBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -[CPKitManager shareManager].statusBarHeight, CPScreenWidth(), [CPKitManager shareManager].navHeight)];
+        _navBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -[CPKitManager shareManager].systemStatusBarHeight, CPScreenWidth(), [CPKitManager shareManager].systemNavgationBarHeight)];
         _navBarView.backgroundColor = [UIColor whiteColor];
     }
     return _navBarView;
