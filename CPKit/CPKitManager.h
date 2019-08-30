@@ -15,7 +15,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(instancetype)shareManager;
 
-
 /**
  系统导航栏高度
  */
