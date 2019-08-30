@@ -45,12 +45,13 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "UITextField+Extension.h"
 #import "UITableView+Extension.h"
 #import "UICollectionView+Extension.h"
+#import "NSString+Extension.h"
 #import "CPFileTool.h"
 #import "CPFootRefresh.h"
 #import "CPHeadGifRefresh.h"
 #import "CPShareController.h"
 #import "CPUserDefaultTool.h"
-
+#import "CPCoverView.h"
 
 
 
