@@ -1,0 +1,6 @@
+framework module CPNavgationController {
+  umbrella header "CPNavgationController-umbrella.h"
+
+  export *
+  module * { export * }
+}

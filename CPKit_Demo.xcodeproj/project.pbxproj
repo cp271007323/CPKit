@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		836D41C9600BB161731899F1 /* Pods_CPKit_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */; };
 		E79D82F42318D05900F8CADE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D82F32318D05900F8CADE /* AppDelegate.m */; };
 		E79D82F72318D05900F8CADE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D82F62318D05900F8CADE /* ViewController.m */; };
 		E79D82FA2318D05900F8CADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79D82F82318D05900F8CADE /* Main.storyboard */; };
@@ -28,9 +29,16 @@
 		E79D83382318D20800F8CADE /* CPNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83252318D20800F8CADE /* CPNetRequest.m */; };
 		E79D83392318D20800F8CADE /* CPKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83282318D20800F8CADE /* CPKitManager.m */; };
 		E79D833A2318D20800F8CADE /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D832A2318D20800F8CADE /* BaseViewController.m */; };
+		E79D835C2318F2A400F8CADE /* CPHeadGifRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83502318F2A400F8CADE /* CPHeadGifRefresh.m */; };
+		E79D835D2318F2A400F8CADE /* CPFileTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83532318F2A400F8CADE /* CPFileTool.m */; };
+		E79D835E2318F2A400F8CADE /* CPFootRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83562318F2A400F8CADE /* CPFootRefresh.m */; };
+		E79D835F2318F2A400F8CADE /* CPShareController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83582318F2A400F8CADE /* CPShareController.m */; };
+		E79D83602318F2A400F8CADE /* CPShareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83592318F2A400F8CADE /* CPShareModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB45F3AFD607836F9FAF4310 /* Pods-CPKit_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPKit_Demo.release.xcconfig"; path = "Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo.release.xcconfig"; sourceTree = "<group>"; };
+		BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPKit_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79D82EF2318D05900F8CADE /* CPKit_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPKit_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79D82F22318D05900F8CADE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E79D82F32318D05900F8CADE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +80,17 @@
 		E79D83282318D20800F8CADE /* CPKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPKitManager.m; sourceTree = "<group>"; };
 		E79D832A2318D20800F8CADE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		E79D832B2318D20800F8CADE /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		E79D834F2318F2A400F8CADE /* CPHeadGifRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPHeadGifRefresh.h; sourceTree = "<group>"; };
+		E79D83502318F2A400F8CADE /* CPHeadGifRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPHeadGifRefresh.m; sourceTree = "<group>"; };
+		E79D83522318F2A400F8CADE /* CPFileTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPFileTool.h; sourceTree = "<group>"; };
+		E79D83532318F2A400F8CADE /* CPFileTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPFileTool.m; sourceTree = "<group>"; };
+		E79D83552318F2A400F8CADE /* CPFootRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPFootRefresh.h; sourceTree = "<group>"; };
+		E79D83562318F2A400F8CADE /* CPFootRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPFootRefresh.m; sourceTree = "<group>"; };
+		E79D83582318F2A400F8CADE /* CPShareController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPShareController.m; sourceTree = "<group>"; };
+		E79D83592318F2A400F8CADE /* CPShareModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPShareModel.m; sourceTree = "<group>"; };
+		E79D835A2318F2A400F8CADE /* CPShareController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPShareController.h; sourceTree = "<group>"; };
+		E79D835B2318F2A400F8CADE /* CPShareModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPShareModel.h; sourceTree = "<group>"; };
+		EEDF24EE66277F852ACB2CC7 /* Pods-CPKit_Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPKit_Demo.debug.xcconfig"; path = "Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,18 +98,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836D41C9600BB161731899F1 /* Pods_CPKit_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		533A5ED4A4B29B4B97B76356 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EEDF24EE66277F852ACB2CC7 /* Pods-CPKit_Demo.debug.xcconfig */,
+				AB45F3AFD607836F9FAF4310 /* Pods-CPKit_Demo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE836BB04F020CA82B35D304 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E79D82E62318D05900F8CADE = {
 			isa = PBXGroup;
 			children = (
 				E79D83082318D20800F8CADE /* CPKit */,
 				E79D82F12318D05900F8CADE /* CPKit_Demo */,
 				E79D82F02318D05900F8CADE /* Products */,
+				533A5ED4A4B29B4B97B76356 /* Pods */,
+				CE836BB04F020CA82B35D304 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +161,7 @@
 		E79D83082318D20800F8CADE /* CPKit */ = {
 			isa = PBXGroup;
 			children = (
+				E79D834D2318F27D00F8CADE /* Views */,
 				E79D83092318D20800F8CADE /* Category */,
 				E79D831E2318D20800F8CADE /* CPKit.h */,
 				E79D831F2318D20800F8CADE /* CPKitManager.h */,
@@ -188,6 +229,23 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		E79D834D2318F27D00F8CADE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E79D83522318F2A400F8CADE /* CPFileTool.h */,
+				E79D83532318F2A400F8CADE /* CPFileTool.m */,
+				E79D83552318F2A400F8CADE /* CPFootRefresh.h */,
+				E79D83562318F2A400F8CADE /* CPFootRefresh.m */,
+				E79D834F2318F2A400F8CADE /* CPHeadGifRefresh.h */,
+				E79D83502318F2A400F8CADE /* CPHeadGifRefresh.m */,
+				E79D83582318F2A400F8CADE /* CPShareController.m */,
+				E79D83592318F2A400F8CADE /* CPShareModel.m */,
+				E79D835A2318F2A400F8CADE /* CPShareController.h */,
+				E79D835B2318F2A400F8CADE /* CPShareModel.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E79D83052318D05A00F8CADE /* Build configuration list for PBXNativeTarget "CPKit_Demo" */;
 			buildPhases = (
+				6B5944B7CFE12DEA280BDE7C /* [CP] Check Pods Manifest.lock */,
 				E79D82EB2318D05900F8CADE /* Sources */,
 				E79D82EC2318D05900F8CADE /* Frameworks */,
 				E79D82ED2318D05900F8CADE /* Resources */,
+				5E2D4C12BD6FF8F7973C275D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -253,6 +313,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5E2D4C12BD6FF8F7973C275D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B5944B7CFE12DEA280BDE7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CPKit_Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E79D82EB2318D05900F8CADE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -261,6 +363,8 @@
 				E79D82F72318D05900F8CADE /* ViewController.m in Sources */,
 				E79D833A2318D20800F8CADE /* BaseViewController.m in Sources */,
 				E79D832F2318D20800F8CADE /* UIImage+Extension.m in Sources */,
+				E79D83602318F2A400F8CADE /* CPShareModel.m in Sources */,
+				E79D835E2318F2A400F8CADE /* CPFootRefresh.m in Sources */,
 				E79D83362318D20800F8CADE /* CPNetManager.m in Sources */,
 				E79D83392318D20800F8CADE /* CPKitManager.m in Sources */,
 				E79D832C2318D20800F8CADE /* UIViewController+CP_Extension.m in Sources */,
@@ -270,11 +374,14 @@
 				E79D832D2318D20800F8CADE /* NSMutableAttributedString+Extension.m in Sources */,
 				E79D83372318D20800F8CADE /* CPDataModel.m in Sources */,
 				E79D83022318D05A00F8CADE /* main.m in Sources */,
+				E79D835D2318F2A400F8CADE /* CPFileTool.m in Sources */,
 				E79D82F42318D05900F8CADE /* AppDelegate.m in Sources */,
 				E79D83342318D20800F8CADE /* CPStatusTypeView.m in Sources */,
 				E79D83382318D20800F8CADE /* CPNetRequest.m in Sources */,
 				E79D83352318D20800F8CADE /* UITabBarController+Extension.m in Sources */,
+				E79D835F2318F2A400F8CADE /* CPShareController.m in Sources */,
 				E79D832E2318D20800F8CADE /* UITextField+Extension.m in Sources */,
+				E79D835C2318F2A400F8CADE /* CPHeadGifRefresh.m in Sources */,
 				E79D83312318D20800F8CADE /* UIView+CPFrame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +522,7 @@
 		};
 		E79D83062318D05A00F8CADE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEDF24EE66277F852ACB2CC7 /* Pods-CPKit_Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -432,6 +540,7 @@
 		};
 		E79D83072318D05A00F8CADE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB45F3AFD607836F9FAF4310 /* Pods-CPKit_Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
