@@ -43,6 +43,10 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "NSMutableAttributedString+Extension.h"
 #import "UIImage+Extension.h"
 #import "UITextField+Extension.h"
+#import "CPFileTool.h"
+#import "CPFootRefresh.h"
+#import "CPHeadGifRefresh.h"
+#import "CPShareController.h"
 
 //引用
 #define kWeakObject(x)          @weakify(x);
