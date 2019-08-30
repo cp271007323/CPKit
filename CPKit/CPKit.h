@@ -43,6 +43,8 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "NSMutableAttributedString+Extension.h"
 #import "UIImage+Extension.h"
 #import "UITextField+Extension.h"
+#import "UITableView+Extension.h"
+#import "UICollectionView+Extension.h"
 #import "CPFileTool.h"
 #import "CPFootRefresh.h"
 #import "CPHeadGifRefresh.h"
