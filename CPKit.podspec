@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CPKit"
-  s.version      = "1.1.5"
+  s.version      = "1.1.7"
   s.summary      = "自助框架"
   s.homepage     = "https://github.com/cp271007323/CPKit.git"
   s.license      = "MIT"
