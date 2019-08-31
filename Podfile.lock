@@ -14,7 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - CPNavgationController (1.0.0)
+  - CPNavgationController (1.0.1)
   - IQKeyboardManager (6.4.0)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.1.1)
@@ -50,7 +50,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  CPNavgationController: 63cd377fb00c8bf3fe7ee50ee8b960cb64e51fd8
+  CPNavgationController: 2a9534836c003696148db57d2e7dd4179b639094
   IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: dfef9855ee178e1ce67f3e03b71ca4226330d87d

@@ -8,7 +8,7 @@
 
 #import "UIView+CPFrame.h"
 #import <SDAutoLayout/SDAutoLayout.h>
-#import <CPNavgationController/CPNavigationController.h>
+#import <CPNavgationController/CPNavgationController.h>
 #import "CPKit.h"
 
 @implementation UIView (CPFrame)
@@ -255,12 +255,12 @@
     id appRootNav = [UIApplication sharedApplication].keyWindow.rootViewController;
     
     //获取当前页面显示所在的控制器
-    while ([appRootNav isKindOfClass:[CPNavigationController class]] ||
+    while ([appRootNav isKindOfClass:[CPNavgationController class]] ||
            [appRootNav isKindOfClass:[UITabBarController class]])
     {
-        if ([appRootNav isKindOfClass:[CPNavigationController class]])
+        if ([appRootNav isKindOfClass:[CPNavgationController class]])
         {
-            CPNavigationController *nav = (CPNavigationController *)appRootNav;
+            CPNavgationController *nav = (CPNavgationController *)appRootNav;
             __kindof UIViewController *appRootVC = nav.cp_viewControllers.lastObject;
             topVC = appRootVC;
         }
@@ -284,9 +284,9 @@
     {
         do {
             topVC = topVC.presentedViewController;
-            if ([topVC isKindOfClass:[CPNavigationController class]])
+            if ([topVC isKindOfClass:[CPNavgationController class]])
             {
-                CPNavigationController *nav = (CPNavigationController *)topVC;
+                CPNavgationController *nav = (CPNavgationController *)topVC;
                 topVC = nav.cp_viewControllers.lastObject;
             }
         } while (topVC.presentedViewController);
@@ -322,12 +322,12 @@
     
     if ([nextResponder isKindOfClass:[UIViewController class]])
     {
-        while ([nextResponder isKindOfClass:[CPNavigationController class]] ||
+        while ([nextResponder isKindOfClass:[CPNavgationController class]] ||
                [nextResponder isKindOfClass:[UITabBarController class]])
         {
-            if ([nextResponder isKindOfClass:[CPNavigationController class]])
+            if ([nextResponder isKindOfClass:[CPNavgationController class]])
             {
-                CPNavigationController *nav = (CPNavigationController *)nextResponder;
+                CPNavgationController *nav = (CPNavgationController *)nextResponder;
                 __kindof UIViewController *appRootVC = nav.cp_viewControllers.lastObject;
                 result = appRootVC;
             }

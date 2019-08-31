@@ -10,10 +10,10 @@
 #endif
 #endif
 
-#import "CPNavigationController.h"
-#import "CPWrapNavigationController.h"
+#import "CPNavgationController.h"
+#import "CPWrapNavgationController.h"
 #import "CPWrapViewController.h"
-#import "UIViewController+CPNavigationExtension.h"
+#import "UIViewController+CPNavgationExtension.h"
 
 FOUNDATION_EXPORT double CPNavgationControllerVersionNumber;
 FOUNDATION_EXPORT const unsigned char CPNavgationControllerVersionString[];

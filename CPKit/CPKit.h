@@ -32,7 +32,7 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import <MJExtension/MJExtension.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
-#import <CPNavgationController/CPNavigationController.h>
+#import <CPNavgationController/CPNavgationController.h>
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
 #import "CPNetManager.h"
