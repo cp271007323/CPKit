@@ -10,11 +10,11 @@ target 'CPKit_Demo' do
 
   pod 'AFNetworking'
   pod 'SDAutoLayout'
-  pod 'SDWebImage'
-  pod 'MJRefresh'
-  pod 'MJExtension'
+#  pod 'SDWebImage'
+#  pod 'MJRefresh'
+#  pod 'MJExtension'
   pod 'ReactiveObjC'
-  pod 'IQKeyboardManager'
+#  pod 'IQKeyboardManager'
   pod 'CPNavgationController'
   pod 'MBProgressHUD'
 
