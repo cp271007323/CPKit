@@ -27,11 +27,9 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 
 #import <AFNetworking/AFNetworking.h>
 #import <SDAutoLayout/SDAutoLayout.h>
-#import <SDWebImage/UIImageView+WebCache.h>
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <IQKeyboardManager/IQKeyboardManager.h>
 #import <CPNavgationController/CPNavgationController.h>
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
