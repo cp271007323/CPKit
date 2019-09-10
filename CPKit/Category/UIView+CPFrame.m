@@ -410,6 +410,16 @@
 #endif
 }
 
+#pragma mark - 修改状态栏的颜色
++ (void)statusBarBackgroundColor:(UIColor *)color
+{
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)])
+    {
+        statusBar.backgroundColor = color;
+    }
+}
+
 #pragma mark - 提示框
 + (void)showAletViewWithTitle:(NSString *)title
                       message:(NSString *)message

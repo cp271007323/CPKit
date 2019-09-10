@@ -60,6 +60,9 @@
 #pragma mark - 去除滚动视图安全区
 + (void)contentInsetAdjustmentBehaviorFor:(__kindof UIScrollView *)scrollView;
 
+#pragma mark - 修改状态栏的颜色
++ (void)statusBarBackgroundColor:(UIColor *)color;
+
 #pragma mark - 去除tableView刷新cell弹跳
 + (void)estimatedForTableView:(__kindof UITableView *)tableView;
 
