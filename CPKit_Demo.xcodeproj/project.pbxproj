@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		836D41C9600BB161731899F1 /* Pods_CPKit_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */; };
+		E761CD302328C306003E8B20 /* NSDate+CPDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */; };
 		E79D82F42318D05900F8CADE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D82F32318D05900F8CADE /* AppDelegate.m */; };
 		E79D82F72318D05900F8CADE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D82F62318D05900F8CADE /* ViewController.m */; };
 		E79D82FA2318D05900F8CADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79D82F82318D05900F8CADE /* Main.storyboard */; };
@@ -42,6 +43,8 @@
 /* Begin PBXFileReference section */
 		AB45F3AFD607836F9FAF4310 /* Pods-CPKit_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CPKit_Demo.release.xcconfig"; path = "Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPKit_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CPDate.m"; sourceTree = "<group>"; };
+		E761CD2F2328C306003E8B20 /* NSDate+CPDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CPDate.h"; sourceTree = "<group>"; };
 		E79D82EF2318D05900F8CADE /* CPKit_Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CPKit_Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79D82F22318D05900F8CADE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E79D82F32318D05900F8CADE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +186,8 @@
 		E79D83092318D20800F8CADE /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				E761CD2F2328C306003E8B20 /* NSDate+CPDate.h */,
+				E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */,
 				E79D839A2319190600F8CADE /* NSString+Extension.h */,
 				E79D839B2319190600F8CADE /* NSString+Extension.m */,
 				E79D830A2318D20800F8CADE /* UIViewController+CP_Extension.m */,
@@ -380,6 +385,7 @@
 				E79D837323190B3C00F8CADE /* CPUserDefaultTool.m in Sources */,
 				E79D83602318F2A400F8CADE /* CPShareModel.m in Sources */,
 				E79D83A323191A0100F8CADE /* CPCoverView.m in Sources */,
+				E761CD302328C306003E8B20 /* NSDate+CPDate.m in Sources */,
 				E79D835E2318F2A400F8CADE /* CPFootRefresh.m in Sources */,
 				E79D83362318D20800F8CADE /* CPNetManager.m in Sources */,
 				E79D83392318D20800F8CADE /* CPKitManager.m in Sources */,

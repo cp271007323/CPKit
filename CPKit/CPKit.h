@@ -44,6 +44,8 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "UITableView+Extension.h"
 #import "UICollectionView+Extension.h"
 #import "NSString+Extension.h"
+#import "UITabBarController+Extension.h"
+#import "NSDate+CPDate.h"
 #import "CPFileTool.h"
 #import "CPFootRefresh.h"
 #import "CPHeadGifRefresh.h"
@@ -234,7 +236,7 @@ UIKIT_STATIC_INLINE CAShapeLayer * shaperOLayer(CGFloat width , CGFloat height)
 
 UIKIT_STATIC_INLINE UIColor *CPMainColor()
 {
-    return CPColor(@"ec333c");
+    return CPColor(@"#6DD2A5");
 }
 
 UIKIT_STATIC_INLINE UIColor *CPLineColor()
