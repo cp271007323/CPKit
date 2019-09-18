@@ -195,12 +195,12 @@
 }
 
 
-- (void)takePhotoForViewController
+- (void)takePhotoForCamera
 {
-    [self takePhotoForViewControllerForEditing:NO];
+    [self takePhotoForCameraWithEditing:NO];
 }
 
-- (void)takePhotoForViewControllerForEditing:(BOOL)edit
+- (void)takePhotoForCameraWithEditing:(BOOL)edit
 {
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
@@ -216,6 +216,16 @@
     {
         [UIView showAletViewWithTitle:nil message:@"该设备暂不支持拍照" btnTitle:@"确定" btnTitleColor:CPMainColor() btnTitleBlock:nil];
     }
+}
+
+- (void)takePhotoForLibraryWithEditing:(BOOL)edit
+{
+    UIImagePickerController *pick = [[UIImagePickerController alloc] init];
+    pick.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    pick.delegate = self;
+    pick.allowsEditing = edit;
+    [pick.navigationBar setTintColor:[UIColor blackColor]];
+    [self presentViewController:pick animated:YES completion:nil];
 }
 
 

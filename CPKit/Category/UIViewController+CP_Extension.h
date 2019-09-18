@@ -23,8 +23,20 @@ UINavigationControllerDelegate>
 
 @property (nonatomic , assign) CGFloat cp_rightNavItemSpacing;
 
-- (void)takePhotoForViewController;
 
-- (void)takePhotoForViewControllerForEditing:(BOOL)edit;
+/**
+ 拍照、不裁剪
+ */
+- (void)takePhotoForCamera;
+
+/**
+ 拍照、是否裁剪
+ */
+- (void)takePhotoForCameraWithEditing:(BOOL)edit;
+
+/**
+ 相册选择图片、是否裁剪
+ */
+- (void)takePhotoForLibraryWithEditing:(BOOL)edit;
 
 @end
