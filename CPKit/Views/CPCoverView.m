@@ -56,7 +56,7 @@
 
 #pragma mark - Public
 - (void)showCoverView{
-    [[UIView getTopViewController].view addSubview:self];
+    [[UIView getCurrentRootViewController].view addSubview:self];
 }
 
 - (void)dissCoverView{

@@ -90,7 +90,7 @@
 }
 @end
 
-@implementation UIView (line)
+@implementation UIView (CPline)
 
 - (UIView *)addBottomLineWithOffset:(CGFloat)offset color:(UIColor *)color
 {
@@ -227,6 +227,10 @@
     return line;
 }
 
+@end
+
+@implementation UIView (CPExtension)
+
 #pragma mark - 添加阴影
 - (void)addShadow
 {
@@ -246,13 +250,21 @@
     self.layer.shadowOpacity = opacity;
 }
 
+- (void)rasterizationScale
+{
+    self.layer.shouldRasterize = YES;
+    self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+}
 
 #pragma mark - 获取当前控制器
-+ (UIViewController*)getViewController
+/**
+ 当前所在的控制器
+ */
++ (UIViewController*)getCurrentViewController;
 {
     UIViewController *currentVC = nil;
     UIViewController *topVC = nil;
-    id appRootNav = [UIApplication sharedApplication].keyWindow.rootViewController;
+    id appRootNav = [[UIApplication sharedApplication] delegate].window.rootViewController;
     
     //获取当前页面显示所在的控制器
     while ([appRootNav isKindOfClass:[CPNavgationController class]] ||
@@ -280,7 +292,8 @@
     
     
     //有模态情况下的根视图
-    if (topVC.presentedViewController && ![topVC isKindOfClass:[UIAlertController class]])
+    if (topVC.presentedViewController &&
+        ![topVC.presentedViewController isKindOfClass:[UIAlertController class]])
     {
         do {
             topVC = topVC.presentedViewController;
@@ -289,7 +302,8 @@
                 CPNavgationController *nav = (CPNavgationController *)topVC;
                 topVC = nav.cp_viewControllers.lastObject;
             }
-        } while (topVC.presentedViewController);
+        } while (topVC.presentedViewController &&
+                 ![topVC.presentedViewController isKindOfClass:[UIAlertController class]]);
         currentVC = topVC;
     }
     //获取非模态情况下的根视图
@@ -353,34 +367,29 @@
 }
 
 /**
- 获取当前顶层控制器
+ 获取当前模式根层控制器
  */
-+ (UIViewController*)getTopViewController
++ (UIViewController*)getCurrentRootViewController
 {
     UIViewController *currentVC = nil;
-    UIViewController *topVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+    UIViewController *topVC = [[UIApplication sharedApplication] delegate].window.rootViewController;
     
     //有模态情况下的根视图
-    if (topVC.presentedViewController &&
-        ![topVC isKindOfClass:[UIAlertController class]])
+    if (topVC.presentedViewController)
     {
-        do {
+        while (topVC.presentedViewController &&
+               ![topVC.presentedViewController isKindOfClass:[UIAlertController class]])
+        {
             topVC = topVC.presentedViewController;
-            
-        } while (topVC.presentedViewController);
+        }
         currentVC = topVC;
     }
     //获取非模态情况下的根视图
     else
     {
-        currentVC = [self getTopCurrentVC];
+        currentVC = topVC;
     }
     return currentVC;
-}
-
-+ (UIViewController *)getTopCurrentVC
-{
-    return [[UIApplication sharedApplication] keyWindow].rootViewController;
 }
 
 
@@ -393,8 +402,8 @@
         scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
 #endif
-    [UIView getCurrentVC].navigationController.automaticallyAdjustsScrollViewInsets = NO;
-    [UIView getCurrentVC].automaticallyAdjustsScrollViewInsets = NO;
+//    [UIView getCurrentVC].navigationController.automaticallyAdjustsScrollViewInsets = NO;
+//    [UIView getCurrentVC].automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - 去除tableView刷新cell弹跳
@@ -421,87 +430,87 @@
 }
 
 #pragma mark - 提示框
-+ (void)showAletViewWithTitle:(NSString *)title
-                      message:(NSString *)message
-                     btnTitle:(NSString *)btnTitle
-                btnTitleColor:(UIColor *)btnTitleColor
-                btnTitleBlock:(void (^)(void))btnTitleBlock
-{
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction *takePAction = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (btnTitleBlock) btnTitleBlock();
-    }];
-    [alertVC addAction:takePAction];
-    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-        
-    }];
-    [alertVC addAction:cancleAction];
-    if (CPiOS9Later)
-    {
-        [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
-    }
-    [[self getViewController] presentViewController:alertVC animated:YES completion:nil];
-}
-
-+ (void)showAletViewWithTitle:(NSString *)title
-                      message:(NSString *)message
-                     btnTitle:(NSString *)btnTitle
-                btnTitleColor:(UIColor *)btnTitleColor
-                btnTitleBlock:(void (^)(void))btnTitleBlock
-                  subBtnTitle:(NSString *)subBtnTitle
-             subBtnTitleColor:(UIColor *)subBtnTitleColor
-             subBtnTitleBlock:(void (^)(void))subBtnTitleBlock
-{
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *takePAction = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (btnTitleBlock) btnTitleBlock();
-    }];
-    UIAlertAction *choosePAction = [UIAlertAction actionWithTitle:subBtnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (subBtnTitleBlock) subBtnTitleBlock();
-    }];
-    [alertVC addAction:takePAction];
-    [alertVC addAction:choosePAction];
-    
-    if (CPiOS9Later)
-    {
-        [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
-        [choosePAction setValue:subBtnTitleColor forKey:@"titleTextColor"];
-    }
-    
-    [[self getViewController] presentViewController:alertVC animated:YES completion:nil];
-}
-
-+ (void)showAletViewAndCancelWithTitle:(NSString *)title
-                               message:(NSString *)message
-                              btnTitle:(NSString *)btnTitle
-                         btnTitleColor:(UIColor *)btnTitleColor
-                         btnTitleBlock:(void (^)(void))btnTitleBlock
-                           subBtnTitle:(NSString *)subBtnTitle
-                      subBtnTitleColor:(UIColor *)subBtnTitleColor
-                      subBtnTitleBlock:(void (^)(void))subBtnTitleBlock
-{
-    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *takePAction = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (btnTitleBlock) btnTitleBlock();
-    }];
-    UIAlertAction *choosePAction = [UIAlertAction actionWithTitle:subBtnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        if (subBtnTitleBlock) subBtnTitleBlock();
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-    [alertVC addAction:takePAction];
-    [alertVC addAction:choosePAction];
-    [alertVC addAction:cancelAction];
-    
-    if (CPiOS9Later)
-    {
-        [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
-        [choosePAction setValue:subBtnTitleColor forKey:@"titleTextColor"];
-        [cancelAction setValue:CPColor(@"333333") forKey:@"titleTextColor"];
-    }
-    
-    [[self getViewController] presentViewController:alertVC animated:YES completion:nil];
-}
+//+ (void)showAletViewWithTitle:(NSString *)title
+//                      message:(NSString *)message
+//                     btnTitle:(NSString *)btnTitle
+//                btnTitleColor:(UIColor *)btnTitleColor
+//                btnTitleBlock:(void (^)(void))btnTitleBlock
+//{
+//    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+//
+//    UIAlertAction *takePAction = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        if (btnTitleBlock) btnTitleBlock();
+//    }];
+//    [alertVC addAction:takePAction];
+//    UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//
+//    }];
+//    [alertVC addAction:cancleAction];
+//    if (CPiOS9Later)
+//    {
+//        [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
+//    }
+//    [[self getViewController] presentViewController:alertVC animated:YES completion:nil];
+//}
+//
+//+ (void)showAletViewWithTitle:(NSString *)title
+//                      message:(NSString *)message
+//                     btnTitle:(NSString *)btnTitle
+//                btnTitleColor:(UIColor *)btnTitleColor
+//                btnTitleBlock:(void (^)(void))btnTitleBlock
+//                  subBtnTitle:(NSString *)subBtnTitle
+//             subBtnTitleColor:(UIColor *)subBtnTitleColor
+//             subBtnTitleBlock:(void (^)(void))subBtnTitleBlock
+//{
+//    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *takePAction = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        if (btnTitleBlock) btnTitleBlock();
+//    }];
+//    UIAlertAction *choosePAction = [UIAlertAction actionWithTitle:subBtnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        if (subBtnTitleBlock) subBtnTitleBlock();
+//    }];
+//    [alertVC addAction:takePAction];
+//    [alertVC addAction:choosePAction];
+//
+//    if (CPiOS9Later)
+//    {
+//        [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
+//        [choosePAction setValue:subBtnTitleColor forKey:@"titleTextColor"];
+//    }
+//
+//    [[self getViewController] presentViewController:alertVC animated:YES completion:nil];
+//}
+//
+//+ (void)showAletViewAndCancelWithTitle:(NSString *)title
+//                               message:(NSString *)message
+//                              btnTitle:(NSString *)btnTitle
+//                         btnTitleColor:(UIColor *)btnTitleColor
+//                         btnTitleBlock:(void (^)(void))btnTitleBlock
+//                           subBtnTitle:(NSString *)subBtnTitle
+//                      subBtnTitleColor:(UIColor *)subBtnTitleColor
+//                      subBtnTitleBlock:(void (^)(void))subBtnTitleBlock
+//{
+//    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *takePAction = [UIAlertAction actionWithTitle:btnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        if (btnTitleBlock) btnTitleBlock();
+//    }];
+//    UIAlertAction *choosePAction = [UIAlertAction actionWithTitle:subBtnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        if (subBtnTitleBlock) subBtnTitleBlock();
+//    }];
+//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//    [alertVC addAction:takePAction];
+//    [alertVC addAction:choosePAction];
+//    [alertVC addAction:cancelAction];
+//
+//    if (CPiOS9Later)
+//    {
+//        [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
+//        [choosePAction setValue:subBtnTitleColor forKey:@"titleTextColor"];
+//        [cancelAction setValue:CPColor(@"333333") forKey:@"titleTextColor"];
+//    }
+//
+//    [[self getViewController] presentViewController:alertVC animated:YES completion:nil];
+//}
 @end
 
 

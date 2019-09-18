@@ -21,7 +21,7 @@
 @property CGFloat CP_bottom;
 @end
 
-@interface UIView (line)
+@interface UIView (CPline)
 
 - (UIView *)addBottomLineWithOffset:(CGFloat)offset color:(UIColor *)color;
 - (UIView *)addBottomLineWithOffset:(CGFloat)offset color:(UIColor *)color height:(CGFloat)height;
@@ -41,6 +41,10 @@
 
 - (UIView *)addCenterDotLine;
 
+@end
+
+@interface UIView (CPExtension)
+
 #pragma mark - 添加阴影
 - (void)addShadow;
 
@@ -48,14 +52,20 @@
 
 - (void)addShadowWithOffset:(CGSize)offset color:(UIColor *)color radius:(CGFloat)radius opacity:(CGFloat)opacity;
 
+- (void)rasterizationScale;
+
 #pragma mark - 获取当前控制器
-+ (UIViewController *)getViewController;
 
-+ (UIViewController *)getCurrentVC;
+/**
+ 当前所在的控制器
+ */
++ (UIViewController*)getCurrentViewController;
 
-+ (UIViewController*)getTopViewController;
+/**
+ 获取当前模式根层控制器
+ */
++ (UIViewController*)getCurrentRootViewController;
 
-+ (UIViewController *)getTopCurrentVC;
 
 #pragma mark - 去除滚动视图安全区
 + (void)contentInsetAdjustmentBehaviorFor:(__kindof UIScrollView *)scrollView;
