@@ -450,7 +450,7 @@
     {
         [takePAction setValue:btnTitleColor forKey:@"titleTextColor"];
     }
-    [[self getCurrentViewController] presentViewController:alertVC animated:YES completion:nil];
+    [[self getCurrentRootViewController] presentViewController:alertVC animated:YES completion:nil];
 }
 
 + (void)showAletViewWithTitle:(NSString *)title
@@ -478,7 +478,7 @@
         [choosePAction setValue:subBtnTitleColor forKey:@"titleTextColor"];
     }
 
-    [[self getCurrentViewController] presentViewController:alertVC animated:YES completion:nil];
+    [[self getCurrentRootViewController] presentViewController:alertVC animated:YES completion:nil];
 }
 
 + (void)showAletViewAndCancelWithTitle:(NSString *)title
@@ -509,7 +509,7 @@
         [cancelAction setValue:CPColor(@"333333") forKey:@"titleTextColor"];
     }
 
-    [[self getCurrentViewController] presentViewController:alertVC animated:YES completion:nil];
+    [[self getCurrentRootViewController] presentViewController:alertVC animated:YES completion:nil];
 }
 
 @end
