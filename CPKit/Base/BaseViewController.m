@@ -179,6 +179,12 @@
     {
         _navBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -[CPKitManager shareManager].systemStatusBarHeight, CPScreenWidth(), [CPKitManager shareManager].systemNavgationBarHeight)];
         _navBarView.backgroundColor = [UIColor whiteColor];
+        
+        UIImageView *imageView = [UIImageView new];
+        imageView.tag = 1;
+        [_navBarView addSubview:imageView];
+        imageView.sd_layout
+        .spaceToSuperView(UIEdgeInsetsZero);
     }
     return _navBarView;
 }
