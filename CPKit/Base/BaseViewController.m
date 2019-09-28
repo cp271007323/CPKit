@@ -2,7 +2,7 @@
 //  BaseViewController.m
 //  Antique_Shop
 //
-//  Created by 陈平 on 2019/8/22.
+//  Created by chenp on 2019/8/22.
 //  Copyright © 2019 RuoXi. All rights reserved.
 //
 

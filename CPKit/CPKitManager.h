@@ -2,7 +2,7 @@
 //  CPKitManager.h
 //  CPKit_Test
 //
-//  Created by 陈平 on 2019/8/29.
+//  Created by chenp on 2019/8/29.
 //  Copyright © 2019 PSK. All rights reserved.
 //
 

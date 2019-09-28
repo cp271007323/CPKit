@@ -3,7 +3,7 @@
 //  MeetAll
 //
 //  Created by RouXiAntique_Shop on 2019/7/2.
-//  Copyright © 2018年 XXF. All rights reserved.
+//  Copyright © 2018年 chenp. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

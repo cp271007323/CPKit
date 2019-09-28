@@ -2,7 +2,7 @@
 //  CPKit.h
 //  CPKit_Test
 //
-//  Created by 陈平 on 2019/8/29.
+//  Created by chenp on 2019/8/29.
 //  Copyright © 2019 PSK. All rights reserved.
 //
 
@@ -52,7 +52,14 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "CPShareController.h"
 #import "CPUserDefaultTool.h"
 #import "CPCoverView.h"
-
+#import "CPRoundLab.h"
+#import "CPLayoutBtn.h"
+#import "BaseTableViewTextFieldCell.h"
+#import "BaseTableViewCell.h"
+#import "BaseTableViewButtonCell.h"
+#import "BaseCollectionViewCell.h"
+#import "BaseCollectionReusableView.h"
+#import "BaseTableViewHeaderFooterView.h"
 
 
 //引用

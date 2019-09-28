@@ -3,7 +3,7 @@
 //  RouXiAntique_Shop
 //
 //  Created by RouXiAntique_Shop on 2017/11/24.
-//  Copyright © 2017年 xxf. All rights reserved.
+//  Copyright © 2017年 chenp. All rights reserved.
 //
 
 #import <MJRefresh/MJRefresh.h>

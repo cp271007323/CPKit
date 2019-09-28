@@ -2,8 +2,8 @@
 //  ViewController.m
 //  CPKit_Demo
 //
-//  Created by 陈平 on 2019/8/30.
-//  Copyright © 2019 陈平. All rights reserved.
+//  Created by chenp on 2019/8/30.
+//  Copyright © 2019 chenp. All rights reserved.
 //
 
 #import "ViewController.h"
