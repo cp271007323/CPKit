@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CPKit.h"
+#import "CPAlertController.h"
 
 @interface ViewController ()
 
@@ -29,13 +30,28 @@
     
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonTitle:@"弹窗" image:nil button:^(UIButton *btn) {
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-            UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"123" message:@"123" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-                CPLog(@"%@",[UIView getCurrentViewController]);
+            
+            [CPAlertController alertControllerWithTitle:@"123" message:@"123123123" preferredStyle:UIAlertControllerStyleActionSheet presentViewController:self completeHandler:^(CPAlertController *alertVC) {
+                [alertVC addTextFieldWithPlaceholder:@"你好1" configurationHandler:^(UITextField * _Nullable textField) {
+                    textField.textColor = [UIColor redColor];
+                }];
+                [alertVC addTextFieldWithPlaceholder:@"你好2" configurationHandler:^(UITextField * _Nullable textField) {
+                    textField.textColor = [UIColor yellowColor];
+                }];
+                [alertVC addTextFieldWithPlaceholder:@"你好3" configurationHandler:^(UITextField * _Nullable textField) {
+                    textField.textColor = [UIColor orangeColor];
+                }];
+                
+                [alertVC addCancelActionWithTitle:@"取消" color:[UIColor redColor] clickWithHandler:^(CPAlertController *alertVC, UIAlertAction *action) {
+                    CPLog(@">>>")
+                }];
+                [alertVC addActionWithTitle:@"确定" color:[UIColor blackColor] clickWithHandler:^(CPAlertController *alertVC, UIAlertAction *action) {
+                    CPLog(@">>>>>>");
+                }];
+                
             }];
-            [alertVC addAction:cancleAction];
-            [self presentViewController:alertVC animated:YES completion:nil];
-            CPLog(@"%@",[UIView getCurrentViewController]);
+            
+            
         }];
         [btn setTitleColor:CPMainColor() forState:UIControlStateNormal];
     }];

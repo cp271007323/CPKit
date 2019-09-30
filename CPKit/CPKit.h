@@ -34,7 +34,14 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
 #import "CPNetManager.h"
+#import "CPAlertController.h"
 #import "BaseViewController.h"
+#import "BaseTableViewTextFieldCell.h"
+#import "BaseTableViewCell.h"
+#import "BaseTableViewButtonCell.h"
+#import "BaseCollectionViewCell.h"
+#import "BaseCollectionReusableView.h"
+#import "BaseTableViewHeaderFooterView.h"
 #import "UIView+CPFrame.h"
 #import "UIViewController+CP_Extension.h"
 #import "UIBarButtonItem+Extension.h"
@@ -54,12 +61,6 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "CPCoverView.h"
 #import "CPRoundLab.h"
 #import "CPLayoutBtn.h"
-#import "BaseTableViewTextFieldCell.h"
-#import "BaseTableViewCell.h"
-#import "BaseTableViewButtonCell.h"
-#import "BaseCollectionViewCell.h"
-#import "BaseCollectionReusableView.h"
-#import "BaseTableViewHeaderFooterView.h"
 
 
 //引用
