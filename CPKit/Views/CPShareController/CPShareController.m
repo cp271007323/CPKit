@@ -8,6 +8,7 @@
 
 #import "CPShareController.h"
 #import "CPShareModel.h"
+#import "CPKit.h"
 
 @interface CPShareController ()
  
@@ -113,6 +114,13 @@
 #pragma mark - Public
 - (void)shareWithViewController:(UIViewController *)viewController
 {
+    if (isIPad)
+    {
+        UIPopoverPresentationController *pop = self.popoverPresentationController;
+        pop.sourceView = viewController.view;
+        pop.sourceRect = viewController.view.frame;
+        pop.permittedArrowDirections = UIPopoverArrowDirectionAny;
+    }
     [viewController presentViewController:self animated:YES completion:nil];
 }
 

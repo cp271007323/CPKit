@@ -69,7 +69,19 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 
 //当前版本号
 #define CPAPP_Version   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define CPFileManager           [NSFileManager defaultManager]
+#define CPNotificationCenter    [NSNotificationCenter defaultCenter]
+#define CPUserDefaults          [NSUserDefaults standardUserDefaults]
+#define CPUUID                  [UIDevice currentDevice].identifierForVendor.UUIDString
+#define CPWindow                [UIApplication sharedApplication].delegate.window
 
+//缓存路径
+#define CPCachePath             [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+
+//沙盒文档路径
+#define CPDocumentPath          [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+//ipad
+#define isIPad                  ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 
 //清除空值
 UIKIT_STATIC_INLINE NSString * CPString(NSString *str)
