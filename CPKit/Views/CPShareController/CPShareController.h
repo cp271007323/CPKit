@@ -17,6 +17,6 @@
 + (instancetype)sharaMangerWithTitle:(NSString *)title
                               images:(NSArray<UIImage *>*)images;
 
-- (void)shareWithViewController:(UIViewController *)viewController;
+- (void)shareWithViewController:(UIViewController *)viewController view:(UIView *)view;
 
 @end

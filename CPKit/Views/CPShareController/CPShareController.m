@@ -112,13 +112,13 @@
 }
 
 #pragma mark - Public
-- (void)shareWithViewController:(UIViewController *)viewController
+- (void)shareWithViewController:(UIViewController *)viewController view:(UIView *)view
 {
     if (isIPad)
     {
         UIPopoverPresentationController *pop = self.popoverPresentationController;
         pop.sourceView = viewController.view;
-        pop.sourceRect = viewController.view.frame;
+        pop.sourceRect = [view convertRect:view.frame toView:nil];
         pop.permittedArrowDirections = UIPopoverArrowDirectionAny;
     }
     [viewController presentViewController:self animated:YES completion:nil];
