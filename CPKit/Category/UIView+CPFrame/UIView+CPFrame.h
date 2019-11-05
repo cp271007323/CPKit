@@ -53,6 +53,10 @@
 - (void)addShadowWithOffset:(CGSize)offset color:(UIColor *)color radius:(CGFloat)radius opacity:(CGFloat)opacity;
 
 #pragma mark - 获取当前控制器
+/**
+ 由当前视图获取根控制器
+*/
+- (UIViewController *)getSupreViewController;
 
 /**
  当前所在的控制器

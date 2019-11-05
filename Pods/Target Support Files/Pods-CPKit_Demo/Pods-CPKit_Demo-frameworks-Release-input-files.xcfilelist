@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-CPKit_Demo/Pods-CPKit_Demo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CPNavgationController/CPNavgationController.framework
 ${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework
 ${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework

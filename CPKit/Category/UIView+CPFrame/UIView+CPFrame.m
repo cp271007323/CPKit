@@ -252,140 +252,164 @@
 }
 
 #pragma mark - 获取当前控制器
+
++ (UIWindow *)getWindow
+{
+    UIWindow* window = nil;
+    
+    if (@available(iOS 13.0, *))
+    {
+        for (UIWindowScene* windowScene in [UIApplication sharedApplication].connectedScenes)
+        {
+            if (windowScene.activationState == UISceneActivationStateForegroundActive)
+            {
+                window = windowScene.windows.firstObject;
+                break;
+            }
+        }
+    }else{
+        window = [UIApplication sharedApplication].keyWindow;
+    }
+    return window;
+}
+
+/// 由当前视图获取根控制器
+- (UIViewController *)getSupreViewController
+{
+//此处的self.view指的是：如果你想获取的是控制器所在的父控制器，传入的是你当前控制器的view；如果想获取的是一个view的父控制器，直接传当前view本身就可以了
+    for (UIView* next = [self superview]; next; next = next.superview) {
+        UIResponder* nextResponder = [next nextResponder];
+        if ([nextResponder isKindOfClass:[UIViewController class]]) {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    return nil;
+}
+
 /**
  当前所在的控制器
 // */
-//+ (UIViewController*)getCurrentViewController;
-//{
-//    UIViewController *currentVC = nil;
-//    UIViewController *topVC = nil;
-//    id appRootNav = [[UIApplication sharedApplication] delegate].window.rootViewController;
-//    
-//    //获取当前页面显示所在的控制器
-//    while ([appRootNav isKindOfClass:[CPNavgationController class]] ||
-//           [appRootNav isKindOfClass:[UITabBarController class]])
-//    {
-//        if ([appRootNav isKindOfClass:[CPNavgationController class]])
-//        {
-//            CPNavgationController *nav = (CPNavgationController *)appRootNav;
-//            __kindof UIViewController *appRootVC = nav.cp_viewControllers.lastObject;
-//            topVC = appRootVC;
-//        }
-//        else if ([appRootNav isKindOfClass:[UITabBarController class]])
-//        {
-//            UITabBarController *tabBarVC = (UITabBarController *)appRootNav;
-//            __kindof UIViewController *appRootVC = tabBarVC.viewControllers[tabBarVC.selectedIndex];
-//            topVC = appRootVC;
-//        }
-//        else
-//        {
-//            __kindof UIViewController *appRootVC = appRootNav;
-//            topVC = appRootVC;
-//        }
-//        appRootNav = topVC;
-//    }
-//    
-//    
-//    //有模态情况下的根视图
-//    if (topVC.presentedViewController &&
-//        ![topVC.presentedViewController isKindOfClass:[UIAlertController class]])
-//    {
-//        do {
-//            topVC = topVC.presentedViewController;
-//            if ([topVC isKindOfClass:[CPNavgationController class]])
-//            {
-//                CPNavgationController *nav = (CPNavgationController *)topVC;
-//                topVC = nav.cp_viewControllers.lastObject;
-//            }
-//        } while (topVC.presentedViewController &&
-//                 ![topVC.presentedViewController isKindOfClass:[UIAlertController class]]);
-//        currentVC = topVC;
-//    }
-//    //获取非模态情况下的根视图
-//    else
-//    {
-//        currentVC = [self getCurrentVC];
-//    }
-//    return currentVC;
-//}
-//
-//+ (UIViewController *)getCurrentVC
-//{
-//    UIViewController *result = nil;
-//    UIWindow * window = [[[UIApplication sharedApplication] delegate] window];
-//    if (window.windowLevel != UIWindowLevelNormal)
-//    {
-//        NSArray *windows = [[UIApplication sharedApplication] windows];
-//        for(UIWindow * tmpWin in windows)
-//        {
-//            if (tmpWin.windowLevel == UIWindowLevelNormal)
-//            {
-//                window = tmpWin;
-//                break;
-//            }
-//        }
-//    }
-//    
-//    UIView *frontView = [[window subviews] objectAtIndex:0];
-//    id nextResponder = [frontView nextResponder];
-//    
-//    if ([nextResponder isKindOfClass:[UIViewController class]])
-//    {
-//        while ([nextResponder isKindOfClass:[CPNavgationController class]] ||
-//               [nextResponder isKindOfClass:[UITabBarController class]])
-//        {
-//            if ([nextResponder isKindOfClass:[CPNavgationController class]])
-//            {
-//                CPNavgationController *nav = (CPNavgationController *)nextResponder;
-//                __kindof UIViewController *appRootVC = nav.cp_viewControllers.lastObject;
-//                result = appRootVC;
-//            }
-//            else if ([nextResponder isKindOfClass:[UITabBarController class]])
-//            {
-//                UITabBarController *tabBarVC = (UITabBarController *)nextResponder;
-//                __kindof UIViewController *appRootVC = tabBarVC.viewControllers[tabBarVC.selectedIndex];
-//                result = appRootVC;
-//            }
-//            else
-//            {
-//                __kindof UIViewController *appRootVC = nextResponder;
-//                result = appRootVC;
-//            }
-//            nextResponder = result;
-//        }
-//    }
-//    else
-//    {
-//        result = window.rootViewController;
-//    }
-//    return result;
-//}
-//
-///**
++ (UIViewController*)getCurrentViewController;
+{
+    UIViewController *currentVC = nil;
+    UIViewController *topVC = nil;
+    
+    
+    id appRootNav = [self getWindow].rootViewController;
+    
+    if ([appRootNav isKindOfClass:[UITabBarController class]])
+    {
+        //获取当前页面显示所在的控制器
+        while ([appRootNav isKindOfClass:[UITabBarController class]])
+        {
+            if ([appRootNav isKindOfClass:[UITabBarController class]])
+            {
+                UITabBarController *tabBarVC = (UITabBarController *)appRootNav;
+                __kindof UIViewController *appRootVC = tabBarVC.viewControllers[tabBarVC.selectedIndex];
+                topVC = appRootVC;
+            }
+            else
+            {
+                __kindof UIViewController *appRootVC = appRootNav;
+                topVC = appRootVC;
+            }
+            appRootNav = topVC;
+        }
+    }
+    else
+    {
+        topVC = appRootNav;
+    }
+    
+    //有模态情况下的根视图
+    if (topVC.presentedViewController &&
+        ![topVC.presentedViewController isKindOfClass:[UIAlertController class]])
+    {
+        do {
+            topVC = topVC.presentedViewController;
+            
+        } while (topVC.presentedViewController &&
+                 ![topVC.presentedViewController isKindOfClass:[UIAlertController class]]);
+        currentVC = topVC;
+    }
+    //获取非模态情况下的根视图
+    else
+    {
+        currentVC = topVC;
+    }
+    return currentVC;
+}
+
++ (UIViewController *)getCurrentVC
+{
+    UIViewController *result = nil;
+    UIWindow * window = [self getWindow];
+    if (window.windowLevel != UIWindowLevelNormal)
+    {
+        NSArray *windows = [[UIApplication sharedApplication] windows];
+        for(UIWindow * tmpWin in windows)
+        {
+            if (tmpWin.windowLevel == UIWindowLevelNormal)
+            {
+                window = tmpWin;
+                break;
+            }
+        }
+    }
+    
+    UIView *frontView = [[window subviews] objectAtIndex:0];
+    id nextResponder = [frontView nextResponder];
+    
+    if ([nextResponder isKindOfClass:[UIViewController class]])
+    {
+        while ([nextResponder isKindOfClass:[UITabBarController class]])
+        {
+            if ([nextResponder isKindOfClass:[UITabBarController class]])
+            {
+                UITabBarController *tabBarVC = (UITabBarController *)nextResponder;
+                __kindof UIViewController *appRootVC = tabBarVC.viewControllers[tabBarVC.selectedIndex];
+                result = appRootVC;
+            }
+            else
+            {
+                __kindof UIViewController *appRootVC = nextResponder;
+                result = appRootVC;
+            }
+            nextResponder = result;
+        }
+    }
+    else
+    {
+        result = window.rootViewController;
+    }
+    return result;
+}
+
+/**
 // 获取当前模式根层控制器
 // */
-//+ (UIViewController*)getCurrentRootViewController
-//{
-//    UIViewController *currentVC = nil;
-//    UIViewController *topVC = [[UIApplication sharedApplication] delegate].window.rootViewController;
-//    
-//    //有模态情况下的根视图
-//    if (topVC.presentedViewController)
-//    {
-//        while (topVC.presentedViewController &&
-//               ![topVC.presentedViewController isKindOfClass:[UIAlertController class]])
-//        {
-//            topVC = topVC.presentedViewController;
-//        }
-//        currentVC = topVC;
-//    }
-//    //获取非模态情况下的根视图
-//    else
-//    {
-//        currentVC = topVC;
-//    }
-//    return currentVC;
-//}
++ (UIViewController*)getCurrentRootViewController
+{
+    UIViewController *currentVC = nil;
+    UIViewController *topVC = [self getWindow].rootViewController;
+    
+    //有模态情况下的根视图
+    if (topVC.presentedViewController)
+    {
+        while (topVC.presentedViewController &&
+               ![topVC.presentedViewController isKindOfClass:[UIAlertController class]])
+        {
+            topVC = topVC.presentedViewController;
+        }
+        currentVC = topVC;
+    }
+    //获取非模态情况下的根视图
+    else
+    {
+        currentVC = topVC;
+    }
+    return currentVC;
+}
 
 
 #pragma mark - 去除滚动视图安全区

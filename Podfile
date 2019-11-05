@@ -15,7 +15,7 @@ target 'CPKit_Demo' do
   pod 'MJExtension'
   pod 'ReactiveObjC'
 #  pod 'IQKeyboardManager'
-#  pod 'CPNavgationController'
+  pod 'CPNavgationController'
 #  pod 'MBProgressHUD'
 
 

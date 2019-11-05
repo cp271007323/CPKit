@@ -8,6 +8,7 @@
 
 #import "MainTabBarBarController.h"
 #import "ViewController.h"
+#import <CPNavgationController/CPNavgationController.h>
 
 @interface MainTabBarBarController ()
 
@@ -33,9 +34,7 @@
 {
 
     
-//    [self addChildViewController:[ViewController new]];
-//    [self addChildViewController:[ViewController new]];
-//    [self addChildViewController:[ViewController new]];
+    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
     
 }
 

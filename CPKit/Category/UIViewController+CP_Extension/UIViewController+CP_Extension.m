@@ -214,7 +214,7 @@
     }
     else
     {
-        [CPAlertController alertControllerWithTitle:nil message:@"该设备暂不支持拍照" preferredStyle:UIAlertControllerStyleAlert presentViewController:[UIView getCurrentViewController] completeHandler:^(CPAlertController * _Nullable alertVC) {
+        [CPAlertController alertControllerWithTitle:nil message:@"该设备暂不支持拍照" preferredStyle:UIAlertControllerStyleAlert presentViewController:self completeHandler:^(CPAlertController * _Nullable alertVC) {
             [alertVC addActionWithTitle:@"确定" color:CPMainColor() clickWithHandler:nil];
         }];
     }
