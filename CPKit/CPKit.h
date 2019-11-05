@@ -25,15 +25,12 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #define CPiOS11Later ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
 
 
-#import <AFNetworking/AFNetworking.h>
 #import <SDAutoLayout/SDAutoLayout.h>
 #import <MJRefresh/MJRefresh.h>
 #import <MJExtension/MJExtension.h>
 #import <ReactiveObjC/ReactiveObjC.h>
-#import <CPNavgationController/CPNavgationController.h>
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
-#import "CPNetManager.h"
 #import "CPAlertController.h"
 #import "BaseViewController.h"
 #import "BaseTableViewTextFieldCell.h"

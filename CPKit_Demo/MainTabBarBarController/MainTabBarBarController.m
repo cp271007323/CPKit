@@ -8,7 +8,6 @@
 
 #import "MainTabBarBarController.h"
 #import "ViewController.h"
-#import <CPNavgationController/CPNavgationController.h>
 
 @interface MainTabBarBarController ()
 
@@ -32,9 +31,7 @@
 #pragma mark - Pravite
 -(void)setupInitForMainTabBarBarController
 {
-    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
-    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
-    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
+
     
 //    [self addChildViewController:[ViewController new]];
 //    [self addChildViewController:[ViewController new]];

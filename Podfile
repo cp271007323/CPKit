@@ -8,15 +8,15 @@ target 'CPKit_Demo' do
   # Pods for CPKit_Demo
 
 
-  pod 'AFNetworking'
+#  pod 'AFNetworking'
   pod 'SDAutoLayout'
 #  pod 'SDWebImage'
   pod 'MJRefresh'
   pod 'MJExtension'
   pod 'ReactiveObjC'
 #  pod 'IQKeyboardManager'
-  pod 'CPNavgationController'
-  pod 'MBProgressHUD'
+#  pod 'CPNavgationController'
+#  pod 'MBProgressHUD'
 
 
 end

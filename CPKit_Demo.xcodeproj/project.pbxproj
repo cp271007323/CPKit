@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		836D41C9600BB161731899F1 /* Pods_CPKit_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */; };
 		E71930F3234199E000718E24 /* CPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E71930F2234199E000718E24 /* CPAlertController.m */; };
+		E753ED0223710AF7007C0036 /* CPBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E753ED0123710AF7007C0036 /* CPBaseTextView.m */; };
 		E761CD302328C306003E8B20 /* NSDate+CPDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */; };
 		E77F555B233213320071C75D /* MainTabBarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77F555A233213320071C75D /* MainTabBarBarController.m */; };
 		E79D82F42318D05900F8CADE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D82F32318D05900F8CADE /* AppDelegate.m */; };
@@ -27,9 +28,6 @@
 		E79D83332318D20800F8CADE /* UICollectionView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D831A2318D20800F8CADE /* UICollectionView+Extension.m */; };
 		E79D83342318D20800F8CADE /* CPStatusTypeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D831B2318D20800F8CADE /* CPStatusTypeView.m */; };
 		E79D83352318D20800F8CADE /* UITabBarController+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D831C2318D20800F8CADE /* UITabBarController+Extension.m */; };
-		E79D83362318D20800F8CADE /* CPNetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83222318D20800F8CADE /* CPNetManager.m */; };
-		E79D83372318D20800F8CADE /* CPDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83242318D20800F8CADE /* CPDataModel.m */; };
-		E79D83382318D20800F8CADE /* CPNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83252318D20800F8CADE /* CPNetRequest.m */; };
 		E79D83392318D20800F8CADE /* CPKitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83282318D20800F8CADE /* CPKitManager.m */; };
 		E79D833A2318D20800F8CADE /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D832A2318D20800F8CADE /* BaseViewController.m */; };
 		E79D835C2318F2A400F8CADE /* CPHeadGifRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83502318F2A400F8CADE /* CPHeadGifRefresh.m */; };
@@ -56,6 +54,8 @@
 		BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CPKit_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71930F1234199E000718E24 /* CPAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPAlertController.h; sourceTree = "<group>"; };
 		E71930F2234199E000718E24 /* CPAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAlertController.m; sourceTree = "<group>"; };
+		E753ED0023710AF7007C0036 /* CPBaseTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBaseTextView.h; sourceTree = "<group>"; };
+		E753ED0123710AF7007C0036 /* CPBaseTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPBaseTextView.m; sourceTree = "<group>"; };
 		E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CPDate.m"; sourceTree = "<group>"; };
 		E761CD2F2328C306003E8B20 /* NSDate+CPDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CPDate.h"; sourceTree = "<group>"; };
 		E77F5559233213320071C75D /* MainTabBarBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarBarController.h; sourceTree = "<group>"; };
@@ -92,12 +92,6 @@
 		E79D831D2318D20800F8CADE /* UITableView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Extension.h"; sourceTree = "<group>"; };
 		E79D831E2318D20800F8CADE /* CPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPKit.h; sourceTree = "<group>"; };
 		E79D831F2318D20800F8CADE /* CPKitManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPKitManager.h; sourceTree = "<group>"; };
-		E79D83212318D20800F8CADE /* CPNetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNetManager.h; sourceTree = "<group>"; };
-		E79D83222318D20800F8CADE /* CPNetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNetManager.m; sourceTree = "<group>"; };
-		E79D83242318D20800F8CADE /* CPDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPDataModel.m; sourceTree = "<group>"; };
-		E79D83252318D20800F8CADE /* CPNetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPNetRequest.m; sourceTree = "<group>"; };
-		E79D83262318D20800F8CADE /* CPDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPDataModel.h; sourceTree = "<group>"; };
-		E79D83272318D20800F8CADE /* CPNetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPNetRequest.h; sourceTree = "<group>"; };
 		E79D83282318D20800F8CADE /* CPKitManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPKitManager.m; sourceTree = "<group>"; };
 		E79D832A2318D20800F8CADE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		E79D832B2318D20800F8CADE /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
@@ -341,6 +335,15 @@
 			path = "UITabBarController+Extension";
 			sourceTree = "<group>";
 		};
+		E753ECFF23710AF7007C0036 /* CPBaseTextView */ = {
+			isa = PBXGroup;
+			children = (
+				E753ED0023710AF7007C0036 /* CPBaseTextView.h */,
+				E753ED0123710AF7007C0036 /* CPBaseTextView.m */,
+			);
+			path = CPBaseTextView;
+			sourceTree = "<group>";
+		};
 		E77F5558233213180071C75D /* MainTabBarBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,7 +396,6 @@
 				E79D83092318D20800F8CADE /* Category */,
 				E79D831E2318D20800F8CADE /* CPKit.h */,
 				E71930FD2341E29C00718E24 /* CPKitManager */,
-				E79D83202318D20800F8CADE /* CPNetManager */,
 				E79D83292318D20800F8CADE /* Base */,
 			);
 			path = CPKit;
@@ -414,27 +416,6 @@
 				E71931072341E33E00718E24 /* UITabBarController+Extension */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		E79D83202318D20800F8CADE /* CPNetManager */ = {
-			isa = PBXGroup;
-			children = (
-				E79D83212318D20800F8CADE /* CPNetManager.h */,
-				E79D83222318D20800F8CADE /* CPNetManager.m */,
-				E79D83232318D20800F8CADE /* CPNetRequest */,
-			);
-			path = CPNetManager;
-			sourceTree = "<group>";
-		};
-		E79D83232318D20800F8CADE /* CPNetRequest */ = {
-			isa = PBXGroup;
-			children = (
-				E79D83242318D20800F8CADE /* CPDataModel.m */,
-				E79D83252318D20800F8CADE /* CPNetRequest.m */,
-				E79D83262318D20800F8CADE /* CPDataModel.h */,
-				E79D83272318D20800F8CADE /* CPNetRequest.h */,
-			);
-			path = CPNetRequest;
 			sourceTree = "<group>";
 		};
 		E79D83292318D20800F8CADE /* Base */ = {
@@ -461,6 +442,7 @@
 		E79D834D2318F27D00F8CADE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E753ECFF23710AF7007C0036 /* CPBaseTextView */,
 				E71930F72341D6AD00718E24 /* CPFileTool */,
 				E71930F62341D69E00718E24 /* CPCoverView */,
 				E71930F0234199C600718E24 /* CPAlertController */,
@@ -597,7 +579,6 @@
 				E79D83A323191A0100F8CADE /* CPCoverView.m in Sources */,
 				E761CD302328C306003E8B20 /* NSDate+CPDate.m in Sources */,
 				E79D835E2318F2A400F8CADE /* CPFootRefresh.m in Sources */,
-				E79D83362318D20800F8CADE /* CPNetManager.m in Sources */,
 				E79D83392318D20800F8CADE /* CPKitManager.m in Sources */,
 				E7E46939233F385600CF6E4E /* BaseTableViewHeaderFooterView.m in Sources */,
 				E79D832C2318D20800F8CADE /* UIViewController+CP_Extension.m in Sources */,
@@ -607,7 +588,6 @@
 				E79D83302318D20800F8CADE /* UITableView+Extension.m in Sources */,
 				E79D83322318D20800F8CADE /* UIBarButtonItem+Extension.m in Sources */,
 				E79D832D2318D20800F8CADE /* NSMutableAttributedString+Extension.m in Sources */,
-				E79D83372318D20800F8CADE /* CPDataModel.m in Sources */,
 				E7E46936233F374900CF6E4E /* CPNumberBtn.m in Sources */,
 				E71930F3234199E000718E24 /* CPAlertController.m in Sources */,
 				E79D83022318D05A00F8CADE /* main.m in Sources */,
@@ -616,12 +596,12 @@
 				E79D835D2318F2A400F8CADE /* CPFileTool.m in Sources */,
 				E79D82F42318D05900F8CADE /* AppDelegate.m in Sources */,
 				E79D83342318D20800F8CADE /* CPStatusTypeView.m in Sources */,
-				E79D83382318D20800F8CADE /* CPNetRequest.m in Sources */,
 				E77F555B233213320071C75D /* MainTabBarBarController.m in Sources */,
 				E79D83352318D20800F8CADE /* UITabBarController+Extension.m in Sources */,
 				E79D835F2318F2A400F8CADE /* CPShareController.m in Sources */,
 				E79D832E2318D20800F8CADE /* UITextField+Extension.m in Sources */,
 				E7E46948233F388100CF6E4E /* BaseTableViewTextFieldCell.m in Sources */,
+				E753ED0223710AF7007C0036 /* CPBaseTextView.m in Sources */,
 				E79D835C2318F2A400F8CADE /* CPHeadGifRefresh.m in Sources */,
 				E79D83312318D20800F8CADE /* UIView+CPFrame.m in Sources */,
 			);

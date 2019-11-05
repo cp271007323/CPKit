@@ -66,6 +66,26 @@
     [self showNavigationBarImage:NO image:[UIImage new]];
 }
 
+- (UIImageView *)hiddenHairlineImageViewUnder:(UIView *)view{
+    
+    if([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
+        {
+        view.hidden = YES;
+        return(UIImageView *)view;
+    }
+    for(UIView *subview in view.subviews)
+        {
+        UIImageView *imageView = [self hiddenHairlineImageViewUnder:subview];
+        if(imageView)
+        {
+            imageView.hidden = YES;
+            return imageView;
+        }
+    }
+    return nil;
+    
+}
+
 #pragma mark - Public
 - (void)setViewControllerTitle:(NSString *)title color:(UIColor *)color
 {
