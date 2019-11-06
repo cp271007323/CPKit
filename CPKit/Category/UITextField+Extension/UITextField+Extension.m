@@ -28,7 +28,7 @@
 
 - (void)setPlaceholdColor:(UIColor *)placeholdColor
 {
-    [self setValue:placeholdColor forKeyPath:@"_placeholderLabel.textColor"];
+    [self setValue:placeholdColor forKeyPath:@"placeholderLabel.textColor"];
     objc_setAssociatedObject(self, @selector(placeholdColor), placeholdColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
