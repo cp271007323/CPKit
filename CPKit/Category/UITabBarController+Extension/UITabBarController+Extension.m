@@ -14,15 +14,17 @@
 
 -(void)addChildViewController:(UIViewController *)childController
                         title:(NSString *)title
+                     selColor:(UIColor *)selColor
                      selImage:(NSString *)selImage
-                   noSelImage:(NSString *)noSelmage
+                   noSelColor:(UIColor *)noSelColor
+                   noSelImage:(NSString *)noSelmage;
 {
     [self addChildViewController:childController];
     childController.tabBarItem.title = title;
-    childController.tabBarItem.image = [[CPImageName(noSelmage) imageWithColor:CPColor(@"aba3a3")] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    childController.tabBarItem.selectedImage = [[CPImageName(selImage) imageWithColor:CPMainColor()] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [childController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11] , NSForegroundColorAttributeName : CPColor(@"aba3a3")} forState:UIControlStateNormal];
-    [childController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11] , NSForegroundColorAttributeName : CPMainColor()} forState:UIControlStateSelected];
+    childController.tabBarItem.image = [[CPImageName(noSelmage) imageWithColor:noSelColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    childController.tabBarItem.selectedImage = [[CPImageName(selImage) imageWithColor:selColor] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [childController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11] , NSForegroundColorAttributeName : noSelColor} forState:UIControlStateNormal];
+    [childController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11] , NSForegroundColorAttributeName : selColor} forState:UIControlStateSelected];
 }
 
 

@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)addChildViewController:(UIViewController *)childController
                         title:(NSString *)title
+                     selColor:(UIColor *)selColor
                      selImage:(NSString *)selImage
+                   noSelColor:(UIColor *)noSelColor
                    noSelImage:(NSString *)noSelmage;
 
 @end
