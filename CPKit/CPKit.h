@@ -246,11 +246,6 @@ UIKIT_STATIC_INLINE CAShapeLayer * shaperOLayer(CGFloat width , CGFloat height)
     return layer;
 }
 
-UIKIT_STATIC_INLINE UIColor *CPMainColor()
-{
-    return CPColor(@"#6DD2A5");
-}
-
 UIKIT_STATIC_INLINE UIColor *CPLineColor()
 {
     return CPColor(@"eeeeee");
