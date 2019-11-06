@@ -10,6 +10,7 @@
 		836D41C9600BB161731899F1 /* Pods_CPKit_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF9E844714D9A0128E73878 /* Pods_CPKit_Demo.framework */; };
 		E71930F3234199E000718E24 /* CPAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = E71930F2234199E000718E24 /* CPAlertController.m */; };
 		E753ED0223710AF7007C0036 /* CPBaseTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E753ED0123710AF7007C0036 /* CPBaseTextView.m */; };
+		E753ED9D23725C4C007C0036 /* CPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E753ED9C23725C4C007C0036 /* CPModel.m */; };
 		E761CD302328C306003E8B20 /* NSDate+CPDate.m in Sources */ = {isa = PBXBuildFile; fileRef = E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */; };
 		E77F555B233213320071C75D /* MainTabBarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E77F555A233213320071C75D /* MainTabBarBarController.m */; };
 		E79D82F42318D05900F8CADE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D82F32318D05900F8CADE /* AppDelegate.m */; };
@@ -56,6 +57,8 @@
 		E71930F2234199E000718E24 /* CPAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPAlertController.m; sourceTree = "<group>"; };
 		E753ED0023710AF7007C0036 /* CPBaseTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPBaseTextView.h; sourceTree = "<group>"; };
 		E753ED0123710AF7007C0036 /* CPBaseTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPBaseTextView.m; sourceTree = "<group>"; };
+		E753ED9B23725C4C007C0036 /* CPModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPModel.h; sourceTree = "<group>"; };
+		E753ED9C23725C4C007C0036 /* CPModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPModel.m; sourceTree = "<group>"; };
 		E761CD2E2328C306003E8B20 /* NSDate+CPDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CPDate.m"; sourceTree = "<group>"; };
 		E761CD2F2328C306003E8B20 /* NSDate+CPDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CPDate.h"; sourceTree = "<group>"; };
 		E77F5559233213320071C75D /* MainTabBarBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabBarBarController.h; sourceTree = "<group>"; };
@@ -379,6 +382,8 @@
 				E79D82F32318D05900F8CADE /* AppDelegate.m */,
 				E79D82F52318D05900F8CADE /* ViewController.h */,
 				E79D82F62318D05900F8CADE /* ViewController.m */,
+				E753ED9B23725C4C007C0036 /* CPModel.h */,
+				E753ED9C23725C4C007C0036 /* CPModel.m */,
 				E77F5558233213180071C75D /* MainTabBarBarController */,
 				E79D82F82318D05900F8CADE /* Main.storyboard */,
 				E79D82FB2318D05A00F8CADE /* Assets.xcassets */,
@@ -590,6 +595,7 @@
 				E79D832D2318D20800F8CADE /* NSMutableAttributedString+Extension.m in Sources */,
 				E7E46936233F374900CF6E4E /* CPNumberBtn.m in Sources */,
 				E71930F3234199E000718E24 /* CPAlertController.m in Sources */,
+				E753ED9D23725C4C007C0036 /* CPModel.m in Sources */,
 				E79D83022318D05A00F8CADE /* main.m in Sources */,
 				E7E46933233F374000CF6E4E /* CPRoundLab.m in Sources */,
 				E7E4693F233F386500CF6E4E /* BaseCollectionViewCell.m in Sources */,

@@ -27,7 +27,7 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 
 #import <SDAutoLayout/SDAutoLayout.h>
 #import <MJRefresh/MJRefresh.h>
-#import <MJExtension/MJExtension.h>
+#import <YYModel/YYModel.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
@@ -72,11 +72,6 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #define CPUUID                  [UIDevice currentDevice].identifierForVendor.UUIDString
 #define CPWindow                [UIApplication sharedApplication].delegate.window
 
-//缓存路径
-#define CPCachePath             [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
-
-//沙盒文档路径
-#define CPDocumentPath          [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 //ipad
 #define isIPad                  ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
 

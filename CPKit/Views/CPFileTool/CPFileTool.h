@@ -9,6 +9,12 @@
 
 #import <Foundation/Foundation.h>
 
+//缓存路径
+#define CPCachePath             [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject]
+
+//沙盒文档路径
+#define CPDocumentPath          [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
 typedef enum : NSUInteger {
     CPCacheSize_G,
     CPCacheSize_M,

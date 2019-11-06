@@ -23,7 +23,6 @@
     childController.tabBarItem.selectedImage = [[CPImageName(selImage) imageWithColor:CPMainColor()] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [childController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11] , NSForegroundColorAttributeName : CPColor(@"aba3a3")} forState:UIControlStateNormal];
     [childController.tabBarItem setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:11] , NSForegroundColorAttributeName : CPMainColor()} forState:UIControlStateSelected];
-    
 }
 
 

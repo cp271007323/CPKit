@@ -441,10 +441,27 @@
 #pragma mark - 修改状态栏的颜色
 + (void)statusBarBackgroundColor:(UIColor *)color
 {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)])
+    if (@available(ios 13.0, *))
     {
-        statusBar.backgroundColor = color;
+        UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].keyWindow.windowScene.statusBarManager;
+
+        if([statusBarManager respondsToSelector:@selector(createLocalStatusBar)])
+        {
+
+            UIView *localStatusBarView = [statusBarManager performSelector:@selector(createLocalStatusBar)];
+            UIView *statusBarView = [localStatusBarView performSelector:@selector(statusBar)];
+            
+            UIColor *statusBarColor = color;
+            [statusBarView performSelector:@selector(setForegroundColor:)withObject:statusBarColor];
+        }
+    }
+    else
+    {
+        UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+        if ([statusBar respondsToSelector:@selector(setBackgroundColor:)])
+        {
+            statusBar.backgroundColor = color;
+        }
     }
 }
 
