@@ -39,7 +39,7 @@
 
 - (void)setPlaceholdFont:(UIFont *)placeholdFont
 {
-    [self setValue:placeholdFont forKeyPath:@"_placeholderLabel.font"];
+    [self setValue:placeholdFont forKeyPath:@"placeholderLabel.font"];
     objc_setAssociatedObject(self, @selector(placeholdFont), placeholdFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
