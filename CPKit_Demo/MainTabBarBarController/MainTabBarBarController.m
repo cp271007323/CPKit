@@ -35,6 +35,9 @@
 
     
     [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
+    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
+    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
+    [self addChildViewController:[CPNavgationController rootViewController:[ViewController new]]];
     
 }
 

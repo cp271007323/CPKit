@@ -39,6 +39,7 @@
 		E79D837323190B3C00F8CADE /* CPUserDefaultTool.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D837223190B3C00F8CADE /* CPUserDefaultTool.m */; };
 		E79D839C2319190600F8CADE /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D839B2319190600F8CADE /* NSString+Extension.m */; };
 		E79D83A323191A0100F8CADE /* CPCoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = E79D83A123191A0100F8CADE /* CPCoverView.m */; };
+		E7C98347237537FB00F60B26 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C98346237537FB00F60B26 /* HomeViewController.m */; };
 		E7E46930233F373700CF6E4E /* CPLayoutBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E4692F233F373700CF6E4E /* CPLayoutBtn.m */; };
 		E7E46933233F374000CF6E4E /* CPRoundLab.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E46931233F374000CF6E4E /* CPRoundLab.m */; };
 		E7E46936233F374900CF6E4E /* CPNumberBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E46935233F374900CF6E4E /* CPNumberBtn.m */; };
@@ -114,6 +115,8 @@
 		E79D839B2319190600F8CADE /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		E79D83A123191A0100F8CADE /* CPCoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPCoverView.m; sourceTree = "<group>"; };
 		E79D83A223191A0100F8CADE /* CPCoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPCoverView.h; sourceTree = "<group>"; };
+		E7C98345237537FB00F60B26 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E7C98346237537FB00F60B26 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		E7E4692E233F373700CF6E4E /* CPLayoutBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPLayoutBtn.h; sourceTree = "<group>"; };
 		E7E4692F233F373700CF6E4E /* CPLayoutBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPLayoutBtn.m; sourceTree = "<group>"; };
 		E7E46931233F374000CF6E4E /* CPRoundLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPRoundLab.m; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 				E79D82F32318D05900F8CADE /* AppDelegate.m */,
 				E79D82F52318D05900F8CADE /* ViewController.h */,
 				E79D82F62318D05900F8CADE /* ViewController.m */,
+				E7C98345237537FB00F60B26 /* HomeViewController.h */,
+				E7C98346237537FB00F60B26 /* HomeViewController.m */,
 				E753ED9B23725C4C007C0036 /* CPModel.h */,
 				E753ED9C23725C4C007C0036 /* CPModel.m */,
 				E77F5558233213180071C75D /* MainTabBarBarController */,
@@ -590,6 +595,7 @@
 				E7E46942233F386E00CF6E4E /* BaseTableViewButtonCell.m in Sources */,
 				E79D83332318D20800F8CADE /* UICollectionView+Extension.m in Sources */,
 				E79D839C2319190600F8CADE /* NSString+Extension.m in Sources */,
+				E7C98347237537FB00F60B26 /* HomeViewController.m in Sources */,
 				E79D83302318D20800F8CADE /* UITableView+Extension.m in Sources */,
 				E79D83322318D20800F8CADE /* UIBarButtonItem+Extension.m in Sources */,
 				E79D832D2318D20800F8CADE /* NSMutableAttributedString+Extension.m in Sources */,

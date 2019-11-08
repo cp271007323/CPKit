@@ -22,7 +22,8 @@
     // Override point for customization after application launch.
     
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [CPNavgationController rootViewController:[ViewController new]];
+//    self.window.rootViewController = [CPNavgationController rootViewController:[ViewController new]];
+    self.window.rootViewController = [MainTabBarBarController new];
     [self.window makeKeyAndVisible];
     
     

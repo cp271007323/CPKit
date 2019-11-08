@@ -10,6 +10,8 @@
 #import "CPKit.h"
 #import "CPAlertController.h"
 #import "CPModel.h"
+#import <CPNavgationController/CPNavgationController.h>
+#import "HomeViewController.h"
 
 @interface ViewController ()
 
@@ -21,13 +23,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = UIColor.orangeColor;
+    self.view.backgroundColor = CPRandomColor();
     
-    NSDictionary *dic = @{@"title":@"chenp",@"name":@"chenp1",@"age":@"12"};
-    CPModel *model = [CPModel yy_modelWithJSON:dic];
-    
-    NSDictionary *dic1 = [model yy_modelToJSONObject];
-    NSLog(@"%@",dic1);
     
     
 //    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonTitle:@"跳转" image:nil button:^(UIButton *btn) {
@@ -77,6 +74,12 @@
     
     
     
+}
+
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self presentViewController:[CPNavgationController rootViewController:[HomeViewController new]] animated:YES completion:nil];
 }
 
 @end

@@ -60,7 +60,8 @@
     .topEqualToView(view.superview)
     .leftEqualToView(view)
     .rightEqualToView(view)
-    .heightIs([CPKitManager shareManager].systemNavgationBarHeight);
+    .bottomEqualToView(view);
+    CPLog(@"%@",view);
     
     [self hiddenNavgationBarBottomLine:NO alphaNavgationBar:NO];
     [self showNavigationBarImage:NO image:[UIImage new]];
