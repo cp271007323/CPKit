@@ -13,7 +13,7 @@ target 'CPKit_Demo' do
 #  pod 'SDWebImage'
   pod 'MJRefresh'
 #  pod 'MJExtension'
-  pod 'YYModel'
+  pod 'YYKit'
   pod 'ReactiveObjC'
 #  pod 'IQKeyboardManager'
   pod 'CPNavgationController'

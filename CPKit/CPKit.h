@@ -27,7 +27,7 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 
 #import <SDAutoLayout/SDAutoLayout.h>
 #import <MJRefresh/MJRefresh.h>
-#import <YYModel/YYModel.h>
+#import <YYKit/YYKit.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
