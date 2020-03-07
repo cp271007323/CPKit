@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = CPRandomColor();
+    
     
     
     
@@ -79,7 +79,11 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self presentViewController:[CPNavgationController rootViewController:[HomeViewController new]] animated:YES completion:nil];
+    
+    CPShareController *shareVc = [CPShareController sharaMangerWithTitle:nil image:[UIImage imageNamed:@""] url:@"https://lanhuapp.com/web/#/item?fid=all&commonly="];
+    [shareVc shareWithViewController:self view:nil];
+    
+//    [self presentViewController:[CPNavgationController rootViewController:[HomeViewController new]] animated:YES completion:nil];
 }
 
 @end
