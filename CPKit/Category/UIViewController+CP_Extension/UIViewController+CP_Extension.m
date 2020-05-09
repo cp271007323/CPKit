@@ -118,17 +118,23 @@
             {
                 if (view.subviews.count >= 1 && self.navigationItem.leftBarButtonItems.count != 0)
                 {
-                    UIView *leftStaticView = view.subviews[0];
-                    for (NSLayoutConstraint *constraint in view.constraints)
-                    {
-                        if (([constraint.firstItem isKindOfClass:UILayoutGuide.class] &&
-                             constraint.firstAttribute == NSLayoutAttributeTrailing))
+                    @try {
+                        UIView *leftStaticView = view.subviews[0];
+                        for (NSLayoutConstraint *constraint in view.constraints)
                         {
-                            [view removeConstraint:constraint];
+                            if (([constraint.firstItem isKindOfClass:UILayoutGuide.class] &&
+                                 constraint.firstAttribute == NSLayoutAttributeTrailing))
+                            {
+                                [view removeConstraint:constraint];
+                            }
                         }
+                        [view addConstraint:[NSLayoutConstraint constraintWithItem:leftStaticView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:spacing]];
+                        return;
+                    } @catch (NSException *exception) {
+                        
+                    } @finally {
+                        
                     }
-                    [view addConstraint:[NSLayoutConstraint constraintWithItem:leftStaticView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:spacing]];
-                    return;
                 }
             }
         }
@@ -157,18 +163,24 @@
             {
                 if (view.subviews.count >= 1 && self.navigationItem.rightBarButtonItems.count != 0)
                 {
-                    NSInteger index=  self.navigationItem.leftBarButtonItems.count == 0 ? 0 : 1;
-                    UIView *rightStaticView = view.subviews[index];
-                    for (NSLayoutConstraint *constraint in view.constraints)
-                    {
-                        if (([constraint.firstItem isKindOfClass:UILayoutGuide.class] &&
-                             constraint.firstAttribute == NSLayoutAttributeTrailing))
+                    @try {
+                        NSInteger index=  self.navigationItem.leftBarButtonItems.count == 0 ? 0 : 1;
+                        UIView *rightStaticView = view.subviews[index];
+                        for (NSLayoutConstraint *constraint in view.constraints)
                         {
-                            [view removeConstraint:constraint];
+                            if (([constraint.firstItem isKindOfClass:UILayoutGuide.class] &&
+                                 constraint.firstAttribute == NSLayoutAttributeTrailing))
+                            {
+                                [view removeConstraint:constraint];
+                            }
                         }
+                        [view addConstraint:[NSLayoutConstraint constraintWithItem:rightStaticView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeRight multiplier:1.0 constant:spacing * -1]];
+                        return;
+                    } @catch (NSException *exception) {
+                        
+                    } @finally {
+                        
                     }
-                    [view addConstraint:[NSLayoutConstraint constraintWithItem:rightStaticView attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:view attribute:NSLayoutAttributeRight multiplier:1.0 constant:spacing * -1]];
-                    return;
                 }
             }
         }
