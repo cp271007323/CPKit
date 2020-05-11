@@ -9,8 +9,6 @@ target 'CPKit_Demo' do
 
   # Pods for CPKit_Demo
 
-source 'https://github.com/CocoaPods/Specs.git'
-
 #  pod 'AFNetworking'
   pod 'SDAutoLayout'
 #  pod 'SDWebImage'
