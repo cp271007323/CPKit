@@ -58,6 +58,7 @@ printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPat
 #import "CPCoverView.h"
 #import "CPRoundLab.h"
 #import "CPLayoutBtn.h"
+#import "CPBaseTextView.h"
 
 
 //引用
