@@ -1,9 +1,9 @@
 //
 //  CPLayoutBtn.m
-//  chenp
+//  Mac
 //
-//  Created by chenp on 2018/7/27.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2018/7/27.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import "CPLayoutBtn.h"

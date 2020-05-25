@@ -2,8 +2,8 @@
 //  UIView+CPFrame.h
 //  CP_Category
 //
-//  Created by chenp on 17/5/18.
-//  Copyright © 2017年 chenp. All rights reserved.
+//  Created by Mac on 17/5/18.
+//  Copyright © 2017年 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

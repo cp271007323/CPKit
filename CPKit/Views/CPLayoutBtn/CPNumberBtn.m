@@ -1,9 +1,9 @@
 //
 //  CPNumberBtn.m
-//  chenp
+//  Mac
 //
-//  Created by chenp on 2018/4/19.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2018/4/19.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import "CPNumberBtn.h"

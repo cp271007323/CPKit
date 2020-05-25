@@ -1,9 +1,9 @@
 //
 //  CPBaseTextView.m
-//  TeaServiceCompany
+//  Mac
 //
-//  Created by TeaServiceCompany on 2019/7/31.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2019/7/31.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import "CPBaseTextView.h"

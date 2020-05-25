@@ -2,8 +2,8 @@
 //  CPKit.h
 //  CPKit_Test
 //
-//  Created by chenp on 2019/8/29.
-//  Copyright © 2019 PSK. All rights reserved.
+//  Created by Mac on 2019/8/29.
+//  Copyright © 2019 Mac. All rights reserved.
 //
 
 #ifndef CPKit_h

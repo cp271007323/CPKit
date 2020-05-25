@@ -2,8 +2,8 @@
 //  CPShareController.h
 //  ActivityViewController多图分享
 //
-//  Created by XYQ on 2019/7/12.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2019/7/12.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

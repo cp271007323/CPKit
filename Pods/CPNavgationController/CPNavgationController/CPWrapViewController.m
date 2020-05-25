@@ -3,7 +3,7 @@
 //  测试
 //
 //  Created by lk03 on 2017/8/7.
-//  Copyright © 2017年 chenp. All rights reserved.
+//  Copyright © 2017年 Mac. All rights reserved.
 //
 
 #import "CPWrapViewController.h"

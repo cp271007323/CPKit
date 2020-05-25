@@ -2,8 +2,8 @@
 //  BaseViewController.m
 //  Antique_Shop
 //
-//  Created by chenp on 2019/8/22.
-//  Copyright © 2019 RuoXi. All rights reserved.
+//  Created by Mac on 2019/8/22.
+//  Copyright © 2019 Mac. All rights reserved.
 //
 
 #import "BaseViewController.h"

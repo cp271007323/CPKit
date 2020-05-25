@@ -1,9 +1,9 @@
 //
 //  NSString+StringRegular.h
-//  chenp
+//  Mac
 //
-//  Created by chenp on 2017/11/6.
-//  Copyright © 2017年 林敏. All rights reserved.
+//  Created by Mac on 2017/11/6.
+//  Copyright © 2017年 Mac. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

@@ -2,8 +2,8 @@
 //  CPStatusTypeView.m
 //  MeetAll
 //
-//  Created by chenp on 2019/7/2.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2019/7/2.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import "CPStatusTypeView.h"

@@ -2,8 +2,8 @@
 //  UINavigationBar+CP_Extension.m
 //  CPNavItem
 //
-//  Created by chenp on 2019/7/13.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2019/7/13.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import "UIViewController+CP_Extension.h"

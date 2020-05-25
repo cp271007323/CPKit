@@ -2,8 +2,8 @@
 //  UICollectionView+Extension.h
 //  SSZS
 //
-//  Created by chenp on 2019/7/17.
-//  Copyright © 2019年 chenp. All rights reserved.
+//  Created by Mac on 2019/7/17.
+//  Copyright © 2019年 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,8 +2,8 @@
 //  MainTabBarBarController.h
 //  CPKit_Demo
 //
-//  Created by chenp on 2019/9/18.
-//  Copyright © 2019 chenp. All rights reserved.
+//  Created by Mac on 2019/9/18.
+//  Copyright © 2019 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

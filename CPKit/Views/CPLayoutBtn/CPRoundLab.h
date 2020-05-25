@@ -2,8 +2,8 @@
 //  CPRoundLab.h
 //  MeetAll
 //
-//  Created by chenp on 2018/2/23.
-//  Copyright © 2018年 chenp. All rights reserved.
+//  Created by Mac on 2018/2/23.
+//  Copyright © 2018年 Mac. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
