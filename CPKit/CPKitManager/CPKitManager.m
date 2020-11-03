@@ -91,11 +91,11 @@ static CPKitManager *instance = nil;
 {
     if (![UIApplication sharedApplication].isStatusBarHidden)
     {
-        return (int)self.systemStatusBarHeight == 44 ? 88 : 64;
+        return (int)self.systemStatusBarHeight < 30 ? 64 : 44 + self.systemStatusBarHeight;
     }
     else
     {
-        return (int)self.systemStatusBarHeight == 44 ? 88 - self.systemStatusBarHeight : 64 - self.systemStatusBarHeight;
+        return 44.0;
     }
 }
 
@@ -106,7 +106,7 @@ static CPKitManager *instance = nil;
 
 - (CGFloat)systemTabBarHeight
 {
-    return  (int)self.systemStatusBarHeight == 44 ? 88 : 49;
+    return  (int)self.systemStatusBarHeight < 30 ? 49 : 44 + self.systemStatusBarHeight;
 }
 
 - (UIWindow *)systemWindow
