@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/cp271007323/CPKit.git"
   s.license      = "MIT"
   s.author       = { "cp271007323" => "271007323@qq.com" }
-  s.ios.deployment_target = "9.0"
+  s.ios.deployment_target = "10.0"
   s.frameworks = "Foundation", "UIKit"
   s.dependency 'ReactiveObjC'
   s.dependency 'SDAutoLayout'
