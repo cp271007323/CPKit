@@ -9,15 +9,6 @@
 #ifndef CPKit_h
 #define CPKit_h
 
-//输出
-#if DEBUG
-
-#define CPLog(...) \
-printf("[%s  第%d行]: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
-#else
-#define CPLog(...)
-#endif
-
 //版本
 #define CPiOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
 #define CPiOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
@@ -251,5 +242,28 @@ UIKIT_STATIC_INLINE UIColor *CPLineColor()
 {
     return CPColor(@"eeeeee");
 }
+
+UIKIT_STATIC_INLINE NSString * CPCurrentTime()
+{
+    NSDateFormatter *form =[NSDateFormatter new];
+    [form setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return [form stringFromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+}
+
+UIKIT_STATIC_INLINE NSString * CPCurrentTimeForDebug()
+{
+    NSDateFormatter *form =[NSDateFormatter new];
+    [form setDateFormat:@"HH:mm:ss"];
+    return [form stringFromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
+}
+
+//输出
+#if DEBUG
+
+#define CPLog(...) \
+printf("[%s  第%d行  %s]:%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String],__LINE__,[CPCurrentTimeForDebug() UTF8String], [[NSString stringWithFormat:__VA_ARGS__] UTF8String]);
+#else
+#define CPLog(...)
+#endif
 
 #endif /* CPKit_h */

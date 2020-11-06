@@ -12,9 +12,12 @@
 #import "CPModel.h"
 #import <CPNavgationController/CPNavgationController.h>
 #import "HomeViewController.h"
+#import "SearchViewController.h"
 
-@interface ViewController ()
-
+@interface ViewController ()<
+UISearchBarDelegate>
+@property (nonatomic , strong) UITableView *tableView;
+@property (nonatomic , strong) UISearchController *searchController;
 @end
 
 @implementation ViewController
@@ -22,68 +25,76 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setViewControllerTitle:@"你好" color:CPColor(@"222222")];
+    self.view.backgroundColor = CPRandomColor();
     
+    self.definesPresentationContext = YES;
     
-    
-    
-    
-//    self.navigationItem.rightBarButtonItem = [UIBarButtonItem barButtonTitle:@"跳转" image:nil button:^(UIButton *btn) {
-//        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-////            [self presentViewController:[CPNavgationController rootViewController:[ViewController new]] animated:YES completion:nil];
-//            [self.navigationController pushViewController:[ViewController new] animated:YES];
-//        }];
-//        [btn setTitleColor:CPMainColor() forState:UIControlStateNormal];
-//    }];
-//
-//
-//
-//    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonTitle:@"弹窗" image:nil button:^(UIButton *btn) {
-//        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//            CPLog(@"%@",[UIView getCurrentViewController]);
-//            CPLog(@"%@",[UIView getCurrentRootViewController]);
-//            CPLog(@"%@",[x getSupreViewController]);
-//            [CPAlertController alertControllerWithTitle:@"123" message:@"123123123" preferredStyle:UIAlertControllerStyleActionSheet presentViewController:[UIView getCurrentViewController] completeHandler:^(CPAlertController *alertVC) {
-//                [alertVC addTextFieldWithPlaceholder:@"你好1" configurationHandler:^(UITextField * _Nullable textField) {
-//                    textField.textColor = [UIColor redColor];
-//                }];
-//                [alertVC addTextFieldWithPlaceholder:@"你好2" configurationHandler:^(UITextField * _Nullable textField) {
-//                    textField.textColor = [UIColor yellowColor];
-//                }];
-//                [alertVC addTextFieldWithPlaceholder:@"你好3" configurationHandler:^(UITextField * _Nullable textField) {
-//                    textField.textColor = [UIColor orangeColor];
-//                }];
-//
-//                [alertVC addCancelActionWithTitle:@"取消" color:[UIColor redColor] clickWithHandler:^(CPAlertController *alertVC, UIAlertAction *action) {
-//                    CPLog(@">>>")
-//                }];
-//                [alertVC addActionWithTitle:@"确定" color:[UIColor blackColor] clickWithHandler:^(CPAlertController *alertVC, UIAlertAction *action) {
-//                    CPLog(@">>>>>>");
-//                }];
-//
-//            }];
-//
-//
-//        }];
-//        [btn setTitleColor:CPMainColor() forState:UIControlStateNormal];
-//    }];
-    
-    
-    
-    
-    
-    
-    
-    
+    [self.view addSubview:self.tableView];
+    self.tableView.sd_layout
+    .spaceToSuperView(UIEdgeInsetsZero);
+    CPLog(@"123123");
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+#pragma mark - UISearchControllerDelegate
+- (void)willPresentSearchController:(UISearchController *)searchController
 {
-    
-    CPShareController *shareVc = [CPShareController sharaMangerWithTitle:nil image:[UIImage imageNamed:@""] url:@"https://lanhuapp.com/web/#/item?fid=all&commonly="];
-    [shareVc shareWithViewController:self view:nil];
-    
-//    [self presentViewController:[CPNavgationController rootViewController:[HomeViewController new]] animated:YES completion:nil];
+    self.cp_popGestureDisenabled = YES;
+    self.cp_navigationController.interactivePopGestureRecognizer.enabled = NO;
+    self.cp_navigationController.interactivePopGestureRecognizer.delegate = nil;
+    [searchController.searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)willDismissSearchController:(UISearchController *)searchController
+{
+    self.cp_popGestureDisenabled = NO;
+    self.cp_navigationController.interactivePopGestureRecognizer.enabled = YES;
+    self.cp_navigationController.interactivePopGestureRecognizer.delegate = self.cp_navigationController;
+    [searchController.searchBar setShowsCancelButton:NO animated:YES];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BaseTableViewCell.identifier];
+    cell.backgroundColor = CPRandomColor();
+    return cell;
+}
+
+-(UITableView *)tableView
+{
+    if (_tableView == nil)
+    {
+        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.showsHorizontalScrollIndicator = NO;
+        _tableView.showsVerticalScrollIndicator = NO;
+        _tableView.tableHeaderView = self.searchController.searchBar;
+        [UIView estimatedForTableView:_tableView];
+        [_tableView registerClass:[BaseTableViewCell class] forCellReuseIdentifier:[BaseTableViewCell identifier]];
+    }
+    return _tableView;
+}
+
+- (UISearchController *)searchController
+{
+    if (_searchController == nil) {
+        SearchViewController *vc = [SearchViewController new];
+        _searchController = [[UISearchController alloc] initWithSearchResultsController:vc];
+        _searchController.searchResultsUpdater = vc;
+        _searchController.view.backgroundColor = UIColor.whiteColor;
+        _searchController.searchBar.delegate = self;
+        _searchController.delegate = self;
+        _searchController.searchBar.backgroundImage = [UIImage new];
+        _searchController.searchBar.backgroundColor = UIColor.whiteColor;
+    }
+    return _searchController;
 }
 
 @end

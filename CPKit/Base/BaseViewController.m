@@ -61,7 +61,9 @@
     .leftEqualToView(view)
     .rightEqualToView(view)
     .bottomEqualToView(view);
-    CPLog(@"%@",view);
+    CPLog(@"")
+
+    
     
     [self hiddenNavgationBarBottomLine:NO alphaNavgationBar:NO];
     [self showNavigationBarImage:NO image:[UIImage new]];
@@ -111,6 +113,21 @@
     self.navBarView.sd_layout
     .heightIs(height);
     if (layoutBlock) layoutBlock(self.navBarView);
+}
+
+- (void)refreshForHeader
+{
+    
+}
+
+- (void)refresgForFooter
+{
+    
+}
+
+- (NSInteger)refresgForFooterPage
+{
+    return self.refreshPage;
 }
 
 #pragma mark - UITableViewDataSource

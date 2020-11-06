@@ -6,9 +6,10 @@
 //  Copyright © 2019 Mac. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "CPKit.h"
+
+@interface ViewController : BaseViewController
 
 
 @end

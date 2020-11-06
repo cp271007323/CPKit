@@ -122,8 +122,6 @@
         //无数据
         if (self.type == CPStatusType_NoData)
         {
-            self.contentLab.text = @"空空如也";
-            
             self.submitBtn.hidden = YES;
         }
         //网络异常
@@ -275,7 +273,6 @@
     {
         _imageView = [UIImageView new];
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
-        _imageView.image = CPImageName(@"图层 3198");
     }
     return _imageView;
 }
@@ -294,7 +291,6 @@
     if (_submitBtn == nil)
     {
         _submitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_submitBtn setBackgroundImage:CPImageName(@"按钮1") forState:UIControlStateNormal];
         _submitBtn.titleLabel.font = CPFont_Medium(18);
     }
     return _submitBtn;
