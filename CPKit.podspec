@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "cp271007323" => "271007323@qq.com" }
   s.ios.deployment_target = "10.0"
   s.frameworks = "Foundation", "UIKit"
+  s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   s.dependency 'ReactiveObjC'
   s.dependency 'SDAutoLayout'
   s.dependency 'MJRefresh'
