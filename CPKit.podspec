@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
   s.name         = "CPKit"
-  s.version      = "1.4.7"
-  s.summary      = "自助框架"
+  s.version      = "1.4.8"
+  s.summary      = "自用框架，可快速开发，满足普通开发的需求"
   s.homepage     = "https://github.com/cp271007323/CPKit.git"
   s.license      = "MIT"
   s.author       = { "cp271007323" => "271007323@qq.com" }
