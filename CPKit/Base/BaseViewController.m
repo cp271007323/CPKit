@@ -61,9 +61,6 @@
     .leftEqualToView(view)
     .rightEqualToView(view)
     .bottomEqualToView(view);
-    CPLog(@"")
-
-    
     
     [self hiddenNavgationBarBottomLine:NO alphaNavgationBar:NO];
     [self showNavigationBarImage:NO image:[UIImage new]];
@@ -233,6 +230,33 @@
         _navBottomLine = [self.navBarView addBottomLineWithOffset:0 color:CPColor(@"dbdbdb")];
     }
     return _navBottomLine;
+}
+
+- (CPHeadGifRefresh *)headRefresh
+{
+    if (_headRefresh == nil) {
+        kWeakObject(self)
+        _headRefresh = [CPHeadGifRefresh cpHeaderWithRefreshingBlock:^{
+            kStrongObject(self)
+            [self refreshForHeader];
+        }];
+    }
+    return _headRefresh;
+}
+
+- (CPFootRefresh *)footRefresh
+{
+    if (_footRefresh == nil) {
+        kWeakObject(self)
+        _footRefresh = [CPFootRefresh cpFooterWithRefreshingBlock:^{
+            kStrongObject(self)
+            [self refresgForFooter];
+        } showStatusPage:1 currentPage:^NSInteger{
+            kStrongObject(self)
+            return [self refresgForFooterPage];
+        }];
+    }
+    return _footRefresh;
 }
 
 @end
