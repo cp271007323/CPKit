@@ -93,9 +93,15 @@ UITextViewDelegate>
     if (text.length == 0) return YES;
     
     //超过最大
-    if (textView.text.length >= self.limitMaxCount ||
-        (textView.text.length + text.length)>= self.limitMaxCount) {
+    if (textView.text.length > self.limitMaxCount) {
         
+        return NO;
+    }
+    else if ((textView.text.length + text.length) > self.limitMaxCount) {
+        
+        NSString *str = [NSString stringWithFormat:@"%@%@",textView.text,[text substringToIndex:(self.limitMaxCount - textView.text.length)]];
+        textView.text = @"";
+        [textView insertText:str];
         return NO;
     }
     return YES;

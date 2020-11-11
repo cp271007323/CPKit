@@ -56,7 +56,7 @@
     }];
     
     [[self.textView.textView rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
-        self.noteLab.text = [NSString stringWithFormat:@"%ld/40",x.length];
+        self.noteLab.text = [NSString stringWithFormat:@"%ld/20",x.length];
     }];
     
 }
@@ -66,8 +66,8 @@
 {
     if (_textView == nil) {
         _textView = [CPBaseTextView baseTextView];
-        _textView.limitMaxCount = 20 * 2;
-        [_textView.textView insertText:@"asdhajsd"];
+        _textView.limitMaxCount = 20;
+        [_textView.textView insertText:@"1234567890"];
         _textView.textFont = CPFont_Medium(17);
         _textView.textInset = UIEdgeInsetsMake(20, 15, 20, 15);
         _textView.backgroundColor = CPColor(@"#F6F6F6");
