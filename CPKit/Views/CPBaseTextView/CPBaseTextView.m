@@ -98,7 +98,6 @@ UITextViewDelegate>
         return NO;
     }
     else if ((textView.text.length + text.length) > self.limitMaxCount) {
-        
         NSString *str = [NSString stringWithFormat:@"%@%@",textView.text,[text substringToIndex:(self.limitMaxCount - textView.text.length)]];
         textView.text = @"";
         [textView insertText:str];
