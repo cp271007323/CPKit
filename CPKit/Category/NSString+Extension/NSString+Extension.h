@@ -10,9 +10,7 @@
 
 @interface NSString (Extension)
 
-/**
- md5
- */
-- (NSString *)md5;
+//判断中英混合的的字符串长度
+- (NSInteger)charCount;
 
 @end

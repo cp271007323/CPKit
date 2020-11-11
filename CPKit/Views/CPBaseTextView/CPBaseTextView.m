@@ -16,8 +16,6 @@ UITextViewDelegate>
 
 @property (nonatomic , strong , readwrite) UITextView *placeholdTextView;
 
-@property (nonatomic , assign) NSInteger toNumber;
-
 @property (nonatomic , assign , readwrite) NSInteger currentLength;
 
 @end
@@ -55,9 +53,6 @@ UITextViewDelegate>
     return self;
 }
 
-#pragma mark - Public
-
-
 #pragma mark - Private
 - (void)setupLayout
 {
@@ -83,45 +78,29 @@ UITextViewDelegate>
 
 - (void)setupBingding{
     kWeakObject(self)
-    [[self.textView rac_textSignal] subscribeNext:^(NSString * _Nullable x)
-     {
+    [[self.textView rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+        
          kStrongObject(self)
-         NSInteger lenth = [self convertToInt:x];
-         if (lenth > self.limitMaxCount)
-         {
-             if (self.cpDelegate && [self.cpDelegate respondsToSelector:@selector(baseTextViewForInputMoreThanLimit:)])
-             {
-                 [self.cpDelegate baseTextViewForInputMoreThanLimit:self];
-             }
-             self.textView.text = [x substringToIndex:self.toNumber - 1];
-         }
-         BOOL flag = self.textView.text.length != 0;
-         self.placeholdTextView.hidden = flag;
+         self.placeholdTextView.hidden = self.textView.text.length != 0;
          self.currentLength = self.textView.text.length;
      }];
     
 }
 
-//判断中英混合的的字符串长度
-- (NSInteger)convertToInt:(NSString*)strtemp{
-    self.toNumber = 1;
-    NSInteger number = 0;
-    for (NSInteger i = 0; i < strtemp.length; i++)
-    {
-        unichar p = [strtemp characterAtIndex:i];
-        if (p >= 0x4E00)
-        {
-            number += 2;
-        }else{
-            number += 1;
-        }
-        if (number <= self.limitMaxCount)
-        {
-            self.toNumber = i + 1;
-        }
+#pragma mark - UITextViewDelegate
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if (text.length == 0) return YES;
+    
+    //超过最大
+    if (textView.text.length >= self.limitMaxCount ||
+        (textView.text.length + text.length)>= self.limitMaxCount) {
+        
+        return NO;
     }
-    return number;
+    return YES;
 }
+ 
 
 #pragma mark - Get
 - (UITextView *)textView
@@ -132,6 +111,7 @@ UITextViewDelegate>
         _textView.contentInset = UIEdgeInsetsZero;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.font = CPFont_Regular(15);
+        _textView.delegate = self;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_11_0
         if (@available(iOS 11.0, *))
         {

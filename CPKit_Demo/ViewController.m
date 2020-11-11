@@ -14,10 +14,14 @@
 #import "HomeViewController.h"
 #import "SearchViewController.h"
 
-@interface ViewController ()<
-UISearchBarDelegate>
-@property (nonatomic , strong) UITableView *tableView;
-@property (nonatomic , strong) UISearchController *searchController;
+@interface ViewController ()
+
+@property (nonatomic , strong) CPBaseTextView *textView;
+
+@property (nonatomic , strong) UITextField *nicknameTextField;
+
+@property (nonatomic , strong) UILabel *noteLab;
+
 @end
 
 @implementation ViewController
@@ -25,76 +29,78 @@ UISearchBarDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self setViewControllerTitle:@"你好" color:CPColor(@"222222")];
     self.view.backgroundColor = CPRandomColor();
     
-    self.definesPresentationContext = YES;
+    [self.view sd_addSubviews:@[self.textView,self.nicknameTextField,self.noteLab]];
     
-    [self.view addSubview:self.tableView];
-    self.tableView.sd_layout
-    .spaceToSuperView(UIEdgeInsetsZero);
-    CPLog(@"123123");
+    self.textView.sd_layout
+    .topSpaceToView(self.view, CPKitManager.shareManager.systemNavgationBarHeight + CPAuto(10))
+    .leftSpaceToView(self.view, CPAuto(15))
+    .rightSpaceToView(self.view, CPAuto(15))
+    .heightIs(CPAuto(100));
+    
+    self.noteLab.sd_layout
+    .rightEqualToView(self.textView)
+    .topSpaceToView(self.textView, 10)
+    .autoHeightRatio(0);
+    [self.noteLab setSingleLineAutoResizeWithMaxWidth:200];
+    
+    self.nicknameTextField.sd_layout
+    .topSpaceToView(self.textView, 30)
+    .leftSpaceToView(self.view, CPAuto(15))
+    .rightSpaceToView(self.view, CPAuto(15))
+    .heightIs(CPAuto(40));
+    
+    [[self.nicknameTextField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+        [UITextField limitTextField:self.nicknameTextField limitNumber:11 limitHandeler:nil];
+    }];
+    
+    [[self.textView.textView rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+        self.noteLab.text = [NSString stringWithFormat:@"%ld/40",x.length];
+    }];
+    
 }
 
-#pragma mark - UISearchControllerDelegate
-- (void)willPresentSearchController:(UISearchController *)searchController
-{
-    self.cp_popGestureDisenabled = YES;
-    self.cp_navigationController.interactivePopGestureRecognizer.enabled = NO;
-    self.cp_navigationController.interactivePopGestureRecognizer.delegate = nil;
-    [searchController.searchBar setShowsCancelButton:YES animated:YES];
-}
 
-- (void)willDismissSearchController:(UISearchController *)searchController
+- (CPBaseTextView *)textView
 {
-    self.cp_popGestureDisenabled = NO;
-    self.cp_navigationController.interactivePopGestureRecognizer.enabled = YES;
-    self.cp_navigationController.interactivePopGestureRecognizer.delegate = self.cp_navigationController;
-    [searchController.searchBar setShowsCancelButton:NO animated:YES];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    BaseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BaseTableViewCell.identifier];
-    cell.backgroundColor = CPRandomColor();
-    return cell;
-}
-
--(UITableView *)tableView
-{
-    if (_tableView == nil)
-    {
-        _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        _tableView.showsHorizontalScrollIndicator = NO;
-        _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.tableHeaderView = self.searchController.searchBar;
-        [UIView estimatedForTableView:_tableView];
-        [_tableView registerClass:[BaseTableViewCell class] forCellReuseIdentifier:[BaseTableViewCell identifier]];
+    if (_textView == nil) {
+        _textView = [CPBaseTextView baseTextView];
+        _textView.limitMaxCount = 20 * 2;
+        [_textView.textView insertText:@"asdhajsd"];
+        _textView.textFont = CPFont_Medium(17);
+        _textView.textInset = UIEdgeInsetsMake(20, 15, 20, 15);
+        _textView.backgroundColor = CPColor(@"#F6F6F6");
     }
-    return _tableView;
+    return _textView;
 }
 
-- (UISearchController *)searchController
+-(UITextField *)nicknameTextField
 {
-    if (_searchController == nil) {
-        SearchViewController *vc = [SearchViewController new];
-        _searchController = [[UISearchController alloc] initWithSearchResultsController:vc];
-        _searchController.searchResultsUpdater = vc;
-        _searchController.view.backgroundColor = UIColor.whiteColor;
-        _searchController.searchBar.delegate = self;
-        _searchController.delegate = self;
-        _searchController.searchBar.backgroundImage = [UIImage new];
-        _searchController.searchBar.backgroundColor = UIColor.whiteColor;
+    if (_nicknameTextField == nil) {
+        _nicknameTextField = [UITextField new];
+        _nicknameTextField.placeholder = @"Please enter a nickname";
+        _nicknameTextField.textColor = CPColor(@"#000000");
+        _nicknameTextField.placeholdColor = CPColor(@"dcdcdc");
+        _nicknameTextField.backgroundColor = UIColor.whiteColor;
+        _nicknameTextField.font = CPFont_Regular(15);
+        _nicknameTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 15, 15)];
+        _nicknameTextField.leftView = leftView;
+        _nicknameTextField.leftViewMode = UITextFieldViewModeAlways;
+        _nicknameTextField.delegate = self;
     }
-    return _searchController;
+    return _nicknameTextField;
+}
+
+- (UILabel *)noteLab
+{
+    if (_noteLab == nil) {
+        _noteLab = [UILabel new];
+        _noteLab.textColor = CPColor(@"666666");
+        _noteLab.font = CPFont_Regular(13);
+    }
+    return _noteLab;
 }
 
 @end

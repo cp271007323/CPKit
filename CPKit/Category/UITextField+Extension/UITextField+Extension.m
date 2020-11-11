@@ -13,7 +13,6 @@
 
 + (void)load
 {
-
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
@@ -22,8 +21,6 @@
         
         method_exchangeImplementations(oldMethod, newMethod);
     });
-
-
 }
 
 - (void)setPlaceholdColor:(UIColor *)placeholdColor
@@ -59,41 +56,44 @@
     if (self.placeholdColor) {
         self.placeholdColor = self.placeholdColor;
     }
-
 }
 
 +(NSInteger)limitTextField:(UITextField *_Nonnull)textField limitNumber:(NSInteger)number limitHandeler:(_Nullable UITextFieldLimitHandler)limitHandeler;
 {
     NSString *toBeString = textField.text;
-    // 键盘输入模式
-    NSString *lang = textField.textInputMode.primaryLanguage;
-    
-    // 简体中文输入，包括简体拼音，健体五笔，简体手写
-    if ([lang isEqualToString:@"zh-Hans"])
-    {
-        UITextRange *selectedRange = [textField markedTextRange];
-        
-        //获取高亮部分
-        UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
-        
-        // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
-        if (!position || !selectedRange)
-        {
-            if (toBeString.length > number)
-            {
-                textField.text = @"";
-                [textField insertText:[toBeString substringToIndex:number]];
-                
-                if (limitHandeler)
-                {
-                    limitHandeler();
-                }
-            }
-        }
-    }
-    // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况
-    else
-    {
+//    // 键盘输入模式
+//    NSString *lang = textField.textInputMode.primaryLanguage;
+//
+//    // 简体中文输入，包括简体拼音，健体五笔，简体手写
+//    if ([lang isEqualToString:@"zh-Hans"])
+//    {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            UITextRange *selectedRange = [textField markedTextRange];
+//
+//            if (!selectedRange || !selectedRange.start) {
+//                //获取高亮部分
+//                UITextPosition *position = [textField positionFromPosition:selectedRange.start offset:0];
+//
+//                // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
+//                if (!position || !selectedRange)
+//                {
+//                    if (toBeString.length > number)
+//                    {
+//                        textField.text = @"";
+//                        [textField insertText:[toBeString substringToIndex:number]];
+//
+//                        if (limitHandeler)
+//                        {
+//                            limitHandeler();
+//                        }
+//                    }
+//                }
+//            }
+//        });
+//    }
+//    // 中文输入法以外的直接对其统计限制即可，不考虑其他语种情况
+//    else
+//    {
         if (toBeString.length > number)
         {
             textField.text = @"";
@@ -103,7 +103,7 @@
                 limitHandeler();
             }
         }
-    }
+//    }
     return textField.text.length;
 }
 

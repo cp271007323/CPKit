@@ -7,22 +7,28 @@
 //
 
 #import "NSString+Extension.h"
-#import<CommonCrypto/CommonDigest.h>
 
 @implementation NSString (Extension)
 
-- (NSString *) md5{
-    const char *cStr = [self UTF8String];
-    unsigned char digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5( cStr, (int) strlen(cStr), digest ); // This is the md5 call
-    
-    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    
-    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
-        [output appendFormat:@"%02x", digest[i]];
-    
-    return  output;
+//判断中英混合的的字符串长度
+- (NSInteger)charCount
+{
+    NSInteger number = 0;
+    for (NSInteger i = 0; i < self.length; i++) {
+        
+        unichar p = [self characterAtIndex:i];
+        //文字
+        if (p >= 0x4E00) {
+            
+            number += 1;
+        }
+        //其他
+        else {
+            
+            number += 1;
+        }
+    }
+    return number;
 }
-
 
 @end
