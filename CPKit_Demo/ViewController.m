@@ -31,34 +31,42 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = CPRandomColor();
     
-    [self.view sd_addSubviews:@[self.textView,self.nicknameTextField,self.noteLab]];
+//    [self.view sd_addSubviews:@[self.textView,self.nicknameTextField,self.noteLab]];
+//
+//    self.textView.sd_layout
+//    .topSpaceToView(self.view, CPKitManager.shareManager.systemNavgationBarHeight + CPAuto(10))
+//    .leftSpaceToView(self.view, CPAuto(15))
+//    .rightSpaceToView(self.view, CPAuto(15))
+//    .heightIs(CPAuto(100));
+//
+//    self.noteLab.sd_layout
+//    .rightEqualToView(self.textView)
+//    .topSpaceToView(self.textView, 10)
+//    .autoHeightRatio(0);
+//    [self.noteLab setSingleLineAutoResizeWithMaxWidth:200];
+//
+//    self.nicknameTextField.sd_layout
+//    .topSpaceToView(self.textView, 30)
+//    .leftSpaceToView(self.view, CPAuto(15))
+//    .rightSpaceToView(self.view, CPAuto(15))
+//    .heightIs(CPAuto(40));
+//
+//    [[self.nicknameTextField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+//        [UITextField limitTextField:self.nicknameTextField limitNumber:11 limitHandeler:nil];
+//    }];
+//
+//    [[self.textView.textView rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
+//        self.noteLab.text = [NSString stringWithFormat:@"%ld/20",x.length];
+//    }];
     
-    self.textView.sd_layout
-    .topSpaceToView(self.view, CPKitManager.shareManager.systemNavgationBarHeight + CPAuto(10))
-    .leftSpaceToView(self.view, CPAuto(15))
-    .rightSpaceToView(self.view, CPAuto(15))
-    .heightIs(CPAuto(100));
-    
-    self.noteLab.sd_layout
-    .rightEqualToView(self.textView)
-    .topSpaceToView(self.textView, 10)
-    .autoHeightRatio(0);
-    [self.noteLab setSingleLineAutoResizeWithMaxWidth:200];
-    
-    self.nicknameTextField.sd_layout
-    .topSpaceToView(self.textView, 30)
-    .leftSpaceToView(self.view, CPAuto(15))
-    .rightSpaceToView(self.view, CPAuto(15))
-    .heightIs(CPAuto(40));
-    
-    [[self.nicknameTextField rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
-        [UITextField limitTextField:self.nicknameTextField limitNumber:11 limitHandeler:nil];
+    UIBarButtonItem *item1 = [UIBarButtonItem barButtonTitle:@"你好bububu" image:nil button:^(CPNumberBtn *btn) {
+        [btn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     }];
-    
-    [[self.textView.textView rac_textSignal] subscribeNext:^(NSString * _Nullable x) {
-        self.noteLab.text = [NSString stringWithFormat:@"%ld/20",x.length];
+    UIBarButtonItem *item2 = [UIBarButtonItem barButtonTitle:@"不好" image:nil button:^(CPNumberBtn *btn) {
+        [btn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     }];
-    
+    self.navigationItem.rightBarButtonItems = @[item1,item2];
+    self.cp_rightNavItemSpacing = 0;
 }
 
 

@@ -257,6 +257,20 @@ UIKIT_STATIC_INLINE NSString * CPCurrentTimeForDebug()
     return [form stringFromDate:[NSDate dateWithTimeIntervalSinceNow:0]];
 }
 
+UIKIT_STATIC_INLINE NSTimeInterval CPGetAccurateSecondsSince1970()
+{
+    return [[[NSDate alloc] initWithTimeIntervalSinceNow:0] timeIntervalSince1970];
+}
+
+UIKIT_STATIC_INLINE void CPDispatch_main_async_safe(void (^complete)(void))
+{
+    if ([NSThread isMainThread]) {
+        complete();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), complete);
+    }
+}
+
 //输出
 #if DEBUG
 
@@ -265,5 +279,15 @@ printf("[%s  第%d行  %s]:%s\n",[[[NSString stringWithUTF8String:__FILE__] last
 #else
 #define CPLog(...)
 #endif
+
+
+//防暴击（防止用户连续点击）
+#define CPNo_dupplicate_call(seconds) \
+{\
+    static double _tmLastCall = 0 ;\
+    if(fabs(CPGetAccurateSecondsSince1970() - _tmLastCall) < seconds)\
+        return;\
+    _tmLastCall = CPGetAccurateSecondsSince1970();\
+}
 
 #endif /* CPKit_h */
