@@ -15,9 +15,9 @@
 
 @end
 
-
 @implementation BaseTableViewCell
 
+#pragma mark - Life
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -69,16 +69,10 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
-        [self setupBingdingForBaseValue1];
+    if (self) {
+        
     }
     return self;
 }
-
-- (void)setupBingdingForBaseValue1
-{
-    
-}
-
+ 
 @end

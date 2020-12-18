@@ -8,26 +8,12 @@
 
 #import "BaseCollectionReusableView.h"
 
-
-@interface BaseCollectionReusableView ()
-
-@end
-
-
 @implementation BaseCollectionReusableView
-
-#pragma mark - Life
-
-
+ 
 #pragma mark - Public
 + (NSString *)identifier
 {
     return NSStringFromClass(self);
 }
-
-#pragma mark - Private
-
-
-#pragma mark - Get
 
 @end

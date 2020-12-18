@@ -32,7 +32,6 @@
     self.nextBtn.hidden = !showNextImage;
 }
 
-
 #pragma mark - 生命周期
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -56,18 +55,12 @@
     self.nextBtn.sd_layout
     .spaceToSuperView(UIEdgeInsetsMake(0, 0, 0, CPAuto(15)));
     
-//    [self addBottomLineWithOffset:0 color:CPLineColor()];
 }
-
-
 
 #pragma mark - Public Method
 + (NSString *)identifier{
     return NSStringFromClass([self class]);
 }
-
-#pragma mark - Private Method
-
 
 #pragma mark - get
 - (UILabel *)titleLab

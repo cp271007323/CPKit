@@ -13,9 +13,7 @@
 
 @property (nonatomic , assign) BOOL isAddAllLine;
 
-
 @end
-
 
 @implementation BaseCollectionViewCell
 

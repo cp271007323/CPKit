@@ -8,11 +8,7 @@
 
 #import "BaseTableViewButtonCell.h"
 #import "CPKit.h"
-
-@interface BaseTableViewButtonCell ()
-
-@end
-
+ 
 @implementation BaseTableViewButtonCell
 
 #pragma mark - set
@@ -27,18 +23,9 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self setupLayout];
+        
     }
     return self;
-}
-
-#pragma mark - Public
-
-
-#pragma mark - Private
-- (void)setupLayout
-{
-    
 }
 
 - (void)layoutSubviews
@@ -58,7 +45,6 @@
     .bottomEqualToView(self.contentView)
     .rightSpaceToView(self.contentView, self.rightSpacingForButton)
     .leftSpaceToView(self.textLabel, CPAuto(15));
-    
 }
 
 #pragma mark - Get
@@ -68,7 +54,6 @@
         _button = [UIButton buttonWithType:UIButtonTypeCustom];
         _button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         _button.titleLabel.font = CPFont_Regular(14);
-//        _button.userInteractionEnabled = NO;
         kWeakObject(self)
         [[_button rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             kStrongObject(self)

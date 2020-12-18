@@ -9,13 +9,6 @@
 #ifndef CPKit_h
 #define CPKit_h
 
-//版本
-#define CPiOS8Later ([UIDevice currentDevice].systemVersion.floatValue >= 8.0f)
-#define CPiOS9Later ([UIDevice currentDevice].systemVersion.floatValue >= 9.0f)
-#define CPiOS10Later ([UIDevice currentDevice].systemVersion.floatValue >= 10.0f)
-#define CPiOS11Later ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f)
-
-
 #import <SDAutoLayout/SDAutoLayout.h>
 #import <MJRefresh/MJRefresh.h>
 #import <YYKit/YYKit.h>
@@ -167,6 +160,19 @@ UIKIT_STATIC_INLINE CGFloat CPAuto(CGFloat width)
     }
 }
 
+/// 宽高适配
+/// @param width_iphone iPhone下的适配
+/// @param width_iPad iPad下的适配
+UIKIT_STATIC_INLINE CGFloat CPAllAuto(CGFloat width_iphone , CGFloat width_iPad)
+{
+    if (isIPad) {
+        return CPAuto(width_iPad);
+    }
+    else {
+        return CPAuto(width_iphone);
+    }
+}
+
 //适配文字Font
 UIKIT_STATIC_INLINE NSUInteger adaptSize(NSUInteger fontSize)
 {
@@ -289,5 +295,9 @@ printf("[%s  第%d行  %s]:%s\n",[[[NSString stringWithUTF8String:__FILE__] last
         return;\
     _tmLastCall = CPGetAccurateSecondsSince1970();\
 }
+
+//安全的执行block
+#define CPBlock_invoke(_block_, ...)  !_block_ ?: _block_(__VA_ARGS__)
+
 
 #endif /* CPKit_h */

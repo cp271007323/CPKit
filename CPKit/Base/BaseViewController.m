@@ -13,15 +13,14 @@
 
 @interface BaseViewController ()
 
-/**
- 导航底部线
- */
+//导航底部线
 @property (nonatomic , strong) UIView *navBottomLine;
 
 @end
 
 @implementation BaseViewController
 
+#pragma mark - Life
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     self.isCurrentVC = YES;
@@ -48,7 +47,6 @@
 #pragma mark - Private
 - (void)resetNavigationBarView
 {
-    
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     [self hiddenHairlineImageViewUnder:self.navigationController.navigationBar];
@@ -68,22 +66,18 @@
 
 - (UIImageView *)hiddenHairlineImageViewUnder:(UIView *)view{
     
-    if([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0)
-        {
+    if([view isKindOfClass:UIImageView.class] && view.bounds.size.height <= 1.0) {
         view.hidden = YES;
         return(UIImageView *)view;
     }
-    for(UIView *subview in view.subviews)
-        {
+    for(UIView *subview in view.subviews) {
         UIImageView *imageView = [self hiddenHairlineImageViewUnder:subview];
-        if(imageView)
-        {
+        if(imageView) {
             imageView.hidden = YES;
             return imageView;
         }
     }
     return nil;
-    
 }
 
 #pragma mark - Public
@@ -112,15 +106,9 @@
     if (layoutBlock) layoutBlock(self.navBarView);
 }
 
-- (void)refreshForHeader
-{
-    
-}
+- (void)refreshForHeader { }
 
-- (void)refresgForFooter
-{
-    
-}
+- (void)refresgForFooter { }
 
 - (NSInteger)refresgForFooterPage
 {

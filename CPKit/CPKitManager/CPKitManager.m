@@ -10,13 +10,6 @@
 #import "CPUserDefaultTool.h"
 #import "CPKit.h"
 
-@interface CPKitManager ()
-
-
-
-@end
-
-
 @implementation CPKitManager
 
 static CPKitManager *instance = nil;
@@ -106,7 +99,7 @@ static CPKitManager *instance = nil;
 
 - (CGFloat)systemTabBarHeight
 {
-    return  (int)self.systemStatusBarHeight < 30 ? 49 : 44 + self.systemStatusBarHeight;
+    return  (int)self.systemStatusBarHeight < 30 ? 49 : 83;
 }
 
 - (UIWindow *)systemWindow

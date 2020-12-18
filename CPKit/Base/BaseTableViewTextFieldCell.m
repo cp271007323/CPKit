@@ -22,26 +22,6 @@
     [self.contentView updateConstraints];
 }
 
-#pragma mark - Life
-- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        [self setupLayout];
-    }
-    return self;
-}
-
-#pragma mark - Public
-
-
-#pragma mark - Private
-- (void)setupLayout
-{
-    
-    
-}
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -59,7 +39,6 @@
     .bottomEqualToView(self.contentView)
     .rightSpaceToView(self.contentView, self.rightSpacingForTextFieldView)
     .leftSpaceToView(self.textLabel, CPAuto(15));
-    
 }
 
 #pragma mark - Get
