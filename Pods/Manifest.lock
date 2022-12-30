@@ -3,16 +3,12 @@ PODS:
   - MJRefresh (3.2.0)
   - ReactiveObjC (3.1.1)
   - SDAutoLayout (2.2.1)
-  - YYKit (1.0.9):
-    - YYKit/no-arc (= 1.0.9)
-  - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
   - CPNavgationController
   - MJRefresh
   - ReactiveObjC
   - SDAutoLayout
-  - YYKit
 
 SPEC REPOS:
   trunk:
@@ -20,15 +16,13 @@ SPEC REPOS:
     - MJRefresh
     - ReactiveObjC
     - SDAutoLayout
-    - YYKit
 
 SPEC CHECKSUMS:
   CPNavgationController: 6e0ff466112435009c71813f6bdd944db16f2ed6
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
-  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 5a307c01067bef11796effc11254b0963e84119f
+PODFILE CHECKSUM: d8d31c2e12862863893dcd89d570dfe24ccaed5a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3

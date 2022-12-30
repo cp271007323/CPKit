@@ -46,7 +46,7 @@ static CPKitManager *instance = nil;
         if (dic)
         {
             CPLog(@">>>>>>>>>>>>>>>>>>>>>:用户数据存在")
-            self.userModel = [NSClassFromString(dic[@"Class"]) modelWithDictionary:dic];
+//            self.userModel = [NSClassFromString(dic[@"Class"]) modelWithDictionary:dic];
         }
         else
         {
@@ -59,7 +59,7 @@ static CPKitManager *instance = nil;
             //存在用户
             if (x)
             {
-                [CPUserDefaultTool setUserInfo:[self.userModel modelToJSONObject]];
+//                [CPUserDefaultTool setUserInfo:[self.userModel modelToJSONObject]];
             }
             //不存在
             else

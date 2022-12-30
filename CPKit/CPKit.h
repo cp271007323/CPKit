@@ -11,7 +11,6 @@
 
 #import <SDAutoLayout/SDAutoLayout.h>
 #import <MJRefresh/MJRefresh.h>
-#import <YYKit/YYKit.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <UIKit/UIKit.h>
 #import "CPKitManager.h"
