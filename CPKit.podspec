@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveObjC'
   s.dependency 'SDAutoLayout'
   s.dependency 'MJRefresh'
-  s.dependency 'YYKit'
   s.source = { :git => "https://github.com/cp271007323/CPKit.git", :tag => s.version }
   s.source_files =  "CPKit" , "CPKit/*.{h.m}" ,
  "CPKit/Base" , "CPKit/Base/*.{h.m}" ,
