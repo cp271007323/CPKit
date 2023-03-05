@@ -10,7 +10,6 @@
 #import "CPKit.h"
 #import "CPAlertController.h"
 #import "CPModel.h"
-#import <CPNavgationController/CPNavgationController.h>
 #import "HomeViewController.h"
 #import "SearchViewController.h"
 
@@ -66,7 +65,6 @@
         [btn setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
     }];
     self.navigationItem.rightBarButtonItems = @[item1,item2];
-    self.cp_rightNavItemSpacing = 0;
 }
 
 

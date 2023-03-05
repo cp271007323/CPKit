@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "MainTabBarBarController.h"
-#import <CPNavgationController/CPNavgationController.h>
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -22,7 +21,6 @@
     // Override point for customization after application launch.
     
     self.window.backgroundColor = [UIColor whiteColor];
-//    self.window.rootViewController = [CPNavgationController rootViewController:[ViewController new]];
     self.window.rootViewController = [MainTabBarBarController new];
     [self.window makeKeyAndVisible];
     

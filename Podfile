@@ -11,8 +11,6 @@ target 'CPKit_Demo' do
   pod 'MJRefresh'
   pod 'YYKit'
   pod 'ReactiveObjC'
-#  pod 'IQKeyboardManager'
-  pod 'CPNavgationController'
 
 
 end

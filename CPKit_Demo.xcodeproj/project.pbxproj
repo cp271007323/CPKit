@@ -377,15 +377,6 @@
 			path = CPBaseTextView;
 			sourceTree = "<group>";
 		};
-		E77F5558233213180071C75D /* MainTabBarBarController */ = {
-			isa = PBXGroup;
-			children = (
-				E77F5559233213320071C75D /* MainTabBarBarController.h */,
-				E77F555A233213320071C75D /* MainTabBarBarController.m */,
-			);
-			path = MainTabBarBarController;
-			sourceTree = "<group>";
-		};
 		E79D82E62318D05900F8CADE = {
 			isa = PBXGroup;
 			children = (
@@ -408,6 +399,8 @@
 		E79D82F12318D05900F8CADE /* CPKit_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				E77F5559233213320071C75D /* MainTabBarBarController.h */,
+				E77F555A233213320071C75D /* MainTabBarBarController.m */,
 				E79D82F22318D05900F8CADE /* AppDelegate.h */,
 				E79D82F32318D05900F8CADE /* AppDelegate.m */,
 				E79D82F52318D05900F8CADE /* ViewController.h */,
@@ -418,7 +411,6 @@
 				E7C98346237537FB00F60B26 /* HomeViewController.m */,
 				E753ED9B23725C4C007C0036 /* CPModel.h */,
 				E753ED9C23725C4C007C0036 /* CPModel.m */,
-				E77F5558233213180071C75D /* MainTabBarBarController */,
 				E79D82F82318D05900F8CADE /* Main.storyboard */,
 				E79D82FB2318D05A00F8CADE /* Assets.xcassets */,
 				E79D82FD2318D05A00F8CADE /* LaunchScreen.storyboard */,
