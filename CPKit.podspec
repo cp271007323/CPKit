@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
 
   s.name         = "CPKit"
-  s.version      = "1.5.0"
+  s.version      = "1.5.1"
   s.summary      = "自用框架，可快速开发，满足普通开发的需求"
   s.homepage     = "https://github.com/cp271007323/CPKit.git"
   s.license      = "MIT"
   s.author       = { "cp271007323" => "271007323@qq.com" }
-  s.ios.deployment_target = "10.0"
+  s.ios.deployment_target = "11.0"
   s.frameworks = "Foundation", "UIKit"
   s.pod_target_xcconfig = { 'VALID_ARCHS' => 'x86_64 armv7 arm64' }
   s.dependency 'ReactiveObjC'

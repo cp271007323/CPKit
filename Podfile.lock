@@ -1,5 +1,5 @@
 PODS:
-  - MJRefresh (3.2.0)
+  - MJRefresh (3.7.5)
   - ReactiveObjC (3.1.1)
   - SDAutoLayout (2.2.1)
   - YYKit (1.0.9):
@@ -20,11 +20,11 @@ SPEC REPOS:
     - YYKit
 
 SPEC CHECKSUMS:
-  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDAutoLayout: 8bf6b3bbc8b01f775d4defbb4fda2ace805461be
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c1d07bf0da4038405cf0cd7e96f2805932798202
+PODFILE CHECKSUM: 28c7feb9dd68b62533b31532ff61b8fc7e4d2ae5
 
 COCOAPODS: 1.11.3
