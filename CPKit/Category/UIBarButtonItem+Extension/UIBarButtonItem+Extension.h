@@ -11,9 +11,7 @@
 
 @interface UIBarButtonItem (Extension)
 
-/**
- 生成导航按钮
- */
+/** 生成导航按钮 */
 +(instancetype)barButtonTitle:(NSString *)title
                         image:(UIImage *)image
                        button:(void (^)(CPNumberBtn *btn))buttonblock;

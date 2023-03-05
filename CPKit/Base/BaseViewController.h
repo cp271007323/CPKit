@@ -59,6 +59,7 @@ UICollectionViewDelegateFlowLayout>
 /// 返回刷新的页码
 - (NSInteger)refresgForFooterPage;
 
+
 @end
 
 NS_ASSUME_NONNULL_END

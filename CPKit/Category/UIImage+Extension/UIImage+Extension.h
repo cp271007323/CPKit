@@ -12,7 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (Extension)
 
+/** 绘制颜色图片 */
 - (UIImage *)imageWithColor:(UIColor *)color;
+
+/** 绘制颜色图片 */
+- (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
 
 @end
 

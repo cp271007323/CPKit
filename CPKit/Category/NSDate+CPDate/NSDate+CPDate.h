@@ -10,25 +10,16 @@
 
 @interface NSDate (CPDate)
 
-/**
- 时间装换指定类型
- */
+/** 时间装换指定类型 */
 +(NSString *)currentDateWithFormat:(NSString *)format;
 
-/**
- 当前时间 YYYY-MM-dd hh:mm:ss
- */
+/** 当前时间 YYYY-MM-dd hh:mm:ss */
 +(NSString *)currentDate;
 
-/**
- 当前时间戳
- */
+/** 当前时间戳 */
 +(NSString *)currentTimeStamp;
 
-
-/**
- 当前时间戳（秒）
- */
+/** 当前时间戳（秒） */
 +(NSString *)currentTimeStampForInter;
 
 

@@ -46,7 +46,7 @@ static CPKitManager *instance = nil;
         if (dic)
         {
             CPLog(@">>>>>>>>>>>>>>>>>>>>>:用户数据存在")
-//            self.userModel = [NSClassFromString(dic[@"Class"]) modelWithDictionary:dic];
+            self.userModel = [NSClassFromString(dic[@"Class"]) modelWithDictionary:dic];
         }
         else
         {
@@ -59,7 +59,7 @@ static CPKitManager *instance = nil;
             //存在用户
             if (x)
             {
-//                [CPUserDefaultTool setUserInfo:[self.userModel modelToJSONObject]];
+                [CPUserDefaultTool setUserInfo:[self.userModel modelToJSONObject]];
             }
             //不存在
             else
@@ -80,7 +80,7 @@ static CPKitManager *instance = nil;
     return self.userModel ? YES : NO;
 }
 
-- (CGFloat)systemNavgationBarHeight
++ (CGFloat)systemNavgationBarHeight
 {
     if (![UIApplication sharedApplication].isStatusBarHidden)
     {
@@ -92,17 +92,17 @@ static CPKitManager *instance = nil;
     }
 }
 
-- (CGFloat)systemStatusBarHeight
++ (CGFloat)systemStatusBarHeight
 {
     return [UIApplication sharedApplication].statusBarFrame.size.height;
 }
 
-- (CGFloat)systemTabBarHeight
++ (CGFloat)systemTabBarHeight
 {
-    return  (int)self.systemStatusBarHeight < 30 ? 49 : 83;
+    return (int)self.systemStatusBarHeight < 30 ? 49 : 83;
 }
 
-- (UIWindow *)systemWindow
++ (UIWindow *)systemWindow
 {
     return [UIApplication sharedApplication].delegate.window;
 }

@@ -11,9 +11,7 @@
 
 @interface NSMutableAttributedString (Extension)
 
-/**
- 富文本生成
- */
+/** 富文本生成 */
 +(NSMutableAttributedString * _Nonnull)attributedWithString:(NSString * _Nonnull)str
                                                       color:(UIColor * _Nonnull)color
                                                        font:(UIFont * _Nonnull)font;

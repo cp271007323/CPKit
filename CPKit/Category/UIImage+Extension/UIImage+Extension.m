@@ -13,10 +13,6 @@
 
 /**
  *  重新绘制图片
- *
- *  @param color 填充色
- *
- *  @return UIImage
  */
 - (UIImage *)imageWithColor:(UIColor *)color
 {

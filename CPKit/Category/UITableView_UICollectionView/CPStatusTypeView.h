@@ -26,44 +26,28 @@ typedef void(^CPStatusTypeBlock)(CPStatusType type);
 
 @interface CPStatusTypeView : UIView
 
-/**
- 图片
- */
+/** 图片 */
 @property (nonatomic , strong) UIImageView *imageView;
 
-/**
- 标题
- */
+/** 标题 */
 @property (nonatomic , strong) UILabel *contentLab;
 
-/**
- 按钮
- */
+/** 按钮 */
 @property (nonatomic , strong) UIButton *submitBtn;
 
-/**
- 类型
- */
+/** 类型 */
 @property (nonatomic , assign) CPStatusType type;
 
-/**
- 顶部距离
- */
+/** 顶部距离 */
 @property (nonatomic , assign) CGFloat topSpace;
 
-/**
- 图片大小
- */
+/** 图片大小 */
 @property (nonatomic , assign) CGFloat widthSpace;
 
-/**
- 初始化
- */
+/** 初始化 */
 +(instancetype)statusTypeView;
 
-/**
- 异常显示写入信号成功回执
- */
+/** 异常显示写入信号成功回执 */
 - (void)setCommand:(RACCommand *)signalCommand
    refreshCallBack:(CPStatusTypeBlock)callBack;
 

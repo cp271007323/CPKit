@@ -16,9 +16,7 @@ typedef void(^UITextFieldLimitHandler)(void);
 
 @property (nonatomic , strong) UIFont * _Nullable placeholdFont;
 
-/**
- 限制输入框文本的长度
- */
+/** 限制输入框文本的长度 */
 +(NSInteger)limitTextField:(UITextField *_Nonnull)textField limitNumber:(NSInteger)number limitHandeler:(_Nullable UITextFieldLimitHandler)limitHandeler;
 
 @end

@@ -69,7 +69,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         [self setupInitForCPStatusTypeView];
         [self setupBingdingForCPStatusTypeView];
     }
@@ -151,21 +151,6 @@
         }
     }];
     
-    
-//    [RACObserve(self.activityView, animated) subscribeNext:^(id  _Nullable x){
-//        kStrongObject(self)
-//        //在动画
-//        if ([x boolValue])
-//        {
-//            [self.submitBtn setTitle:nil forState:UIControlStateNormal];
-//        }
-//        //停止动画
-//        else
-//        {
-//            [self.submitBtn setTitle:@"重新刷新" forState:UIControlStateNormal];
-//        }
-//    }];
-    
     [[self rac_signalForSelector:@selector(removeFromSuperview)] subscribeNext:^(RACTuple * _Nullable x){
         kStrongObject(self)
         self.signalCommand = nil;
@@ -198,25 +183,19 @@
 
 - (void)failNetConfig
 {
-    
     self.contentLab.text = @"网络不给力";
     self.submitBtn.hidden = NO;
-    //    [self.viewController.view bringSubviewToFront:self];
 }
 
 - (void)noOpenNetConfig
 {
     self.contentLab.text = @"未开启网络";
     self.submitBtn.hidden = NO;
-    //    [self.viewController.view addSubview:self];
-    //    [self.viewController.view bringSubviewToFront:self];
 }
 
 - (void)otherConfig
 {
     self.submitBtn.hidden = NO;
-    //    [self.viewController.view addSubview:self];
-    //    [self.viewController.view bringSubviewToFront:self];
 }
 
 #pragma mark - Public

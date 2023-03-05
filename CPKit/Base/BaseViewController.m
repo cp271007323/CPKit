@@ -200,7 +200,7 @@
 - (UIView *)navBarView{
     if (_navBarView == nil)
     {
-        _navBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -[CPKitManager shareManager].systemStatusBarHeight, CPScreenWidth(), [CPKitManager shareManager].systemNavgationBarHeight)];
+        _navBarView = [[UIView alloc] initWithFrame:CGRectMake(0, -[CPKitManager systemStatusBarHeight], CPScreenWidth(), [CPKitManager systemNavgationBarHeight])];
         _navBarView.backgroundColor = [UIColor whiteColor];
         
         UIImageView *imageView = [UIImageView new];
